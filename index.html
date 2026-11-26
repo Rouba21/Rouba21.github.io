@@ -136,9 +136,9 @@ footer .links{display:flex;justify-content:center;gap:18px;margin-bottom:10px;fl
 <div class="hero">
   <div class="stage">
     <div class="portrait" id="avatar">
-      <div class="hello" id="hello">Hello ! 👋</div>
+      <div class="hello" id="hello">Hello !</div>
       <div class="frame" id="frame"><img src="rouba.jpg" alt="Rouba Souidi, illustration"></div>
-      <span class="wave">👋</span>
+      
       <span class="sp s1">✦</span><span class="sp s2">✦</span><span class="sp s3">✦</span>
     </div>
   </div>
@@ -149,8 +149,8 @@ footer .links{display:flex;justify-content:center;gap:18px;margin-bottom:10px;fl
     <p class="role">Ingénieure Logiciel & IA · Business Intelligence · Tunis</p>
     <div class="bubble"><span id="say"></span><span class="cursor"></span></div>
     <div class="bubble-controls">
-      <button class="btn" id="next">Suivant ➜</button>
-      <button class="btn ghost" id="openChat2">💬 Discuter avec Rouba</button>
+      <button class="btn" id="next">Suivant →</button>
+      <button class="btn ghost" id="openChat2">Discuter avec Rouba</button>
     </div>
   </div>
 </div>
@@ -205,11 +205,11 @@ footer .links{display:flex;justify-content:center;gap:18px;margin-bottom:10px;fl
 
 <footer>
   <div class="links">
-    <a href="mailto:roubasouidi.pro@gmail.com">✉ Email</a>
+    <a href="mailto:roubasouidi.pro@gmail.com">Email</a>
     <a href="https://linkedin.com/in/rouba-souidi" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/Rouba21" target="_blank" rel="noopener">GitHub</a>
   </div>
-  © 2026 Rouba Souidi · Fait avec ❤ et beaucoup de café
+  © 2026 Rouba Souidi · Tunis · Disponible immédiatement
 </footer>
 </main>
 
@@ -235,11 +235,11 @@ for(let i=0;i<70;i++){const s=document.createElement('i');s.style.left=Math.rand
 
 /* ---------- présentation du personnage ---------- */
 const lines=[
- "Hello & welcome to my profile ! 👋 Bienvenue, vous êtes le bienvenu ici. Je suis Rouba Souidi, ingénieure diplômée en IA & Business Intelligence (ESPRIT, 2026).",
+ "Hello & welcome to my profile ! Bienvenue, vous êtes le bienvenu ici. Je suis Rouba Souidi, ingénieure diplômée en IA & Business Intelligence (ESPRIT, 2026).",
  "Aujourd'hui je développe des agents IA chez Boldys AI : LangGraph, RAG, GPT-4o… et une plateforme SaaS WhatsApp en production.",
  "J'aime tout le cycle produit : backend, frontend, mobile, déploiement… et parler avec les clients !",
- "Côté side projects : Baebles 📚 pour les fans de fantasy, et Banti 🚀 pour connecter fondateurs et investisseurs.",
- "Je cherche un poste à temps plein d'ingénieure logiciel / IA, et je suis disponible tout de suite ✨",
+ "Côté side projects : Baebles pour les fans de fantasy, et Banti pour connecter fondateurs et investisseurs.",
+ "Je cherche un poste à temps plein d'ingénieure logiciel / IA, et je suis disponible tout de suite",
  "Une question ? Clique sur « Discuter avec Rouba » : mon assistante te répond sur mon parcours !"
 ];
 let li=0,timer;const say=document.getElementById('say'),avatar=document.getElementById('avatar');
@@ -250,14 +250,14 @@ setTimeout(()=>speak(lines[0]),500);
 
 
 /* bulle bonjour animée + inclinaison 3D à la souris */
-const hellos=["Hello ! 👋","Welcome to my profile ✨","Bienvenue ! 💜","Vous êtes le bienvenu 😊"];let hi=0;const hello=document.getElementById('hello');
+const hellos=["Hello !","Welcome to my profile","Bienvenue !","Vous êtes le bienvenu"];let hi=0;const hello=document.getElementById('hello');
 setInterval(()=>{hi=(hi+1)%hellos.length;hello.textContent=hellos[hi];hello.classList.remove('swap');void hello.offsetWidth;hello.classList.add('swap')},2600);
 const frame=document.getElementById('frame');
 document.addEventListener('mousemove',e=>{const r=frame.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)/window.innerWidth,y=(e.clientY-r.top-r.height/2)/window.innerHeight;frame.style.transform=`rotateY(${x*18}deg) rotateX(${-y*14}deg)`});
 
 /* ---------- base de connaissances du chatbot ---------- */
 const KB=[
- {k:['bonjour','salut','hello','hi','hey','coucou','salam'],a:"Salut ! 😊 Je suis Rouba, l'assistante de Rouba Souidi. Demande-moi son expérience, ses projets, ses compétences, sa formation ou comment la contacter."},
+ {k:['bonjour','salut','hello','hi','hey','coucou','salam'],a:"Salut ! Je suis Rouba, l'assistante de Rouba Souidi. Demande-moi son expérience, ses projets, ses compétences, sa formation ou comment la contacter."},
  {k:['qui','presente','profil','toi','about','resume'],a:"Rouba Souidi est ingénieure logiciel & IA, diplômée d'ESPRIT (2026) en Intelligence Artificielle & Business Intelligence. Elle couvre tout le cycle produit — backend, frontend, mobile, déploiement, suivi client — et a livré en production des plateformes SaaS et des agents IA (LangGraph, RAG)."},
  {k:['boldys','actuel','poste','travail','job','waas','whatsapp','maintenant'],a:"Depuis 2026, Rouba est développeuse IA chez <b>Boldys AI</b> (télétravail, Belgique). Elle a conçu <b>WaaS</b>, une plateforme SaaS multi-tenant d'automatisation conversationnelle sur WhatsApp Business : moteur multi-agents LangGraph/LangChain + GPT-4o, RAG, prise de RDV via MCP, 23 fonctionnalités en production, 32 tests automatisés."},
  {k:['experience','parcours','carriere','entreprise','stage','advyteam','inrae','sekceram','isep','erp','wms'],a:"Son parcours :<br>• <b>Boldys AI</b> (2026–) — Développeuse IA<br>• <b>Advyteam Accretio & INRAE</b> (2025, Lyon) — Ingénieure logiciel, Product Owner & QA<br>• <b>ISEP Paris & ESPRIT</b> (2024) — Ingénieure ERP, projet WMS (Spring Boot, Flutter)<br>• <b>Sekceram</b> (2023, Algérie) — Ingénieure Cloud ERP (Oracle)"},
@@ -271,17 +271,17 @@ const KB=[
  {k:['langue','language','anglais','francais','arabe','allemand','english'],a:"Arabe (langue maternelle), Français et Anglais courants, Allemand A2."},
  {k:['ieee','associatif','leadership','benevol','club','hult','enactus'],a:"Très engagée : Vice-Présidente IEEE ESPRIT Student Branch, Secrétaire Générale IEEE Computer Society, Vice-Présidente WIE ACT 3 Congress, Coordinatrice logistique Hult Prize ESPRIT, participante IEEE Region 8 SYP Congress (Grenoble)…"},
  {k:['agile','scrum','methode','kanban','product','owner'],a:"Méthodes : Scrum, Kanban, Scrumban, CRISP-DM, Design Science Research. Elle a aussi été Product Owner (backlog, user stories, priorisation)."},
- {k:['dispo','disponible','recrut','embauche','cherche','hire','cdi','temps','offre','opportunit'],a:"Rouba cherche un poste à temps plein d'<b>ingénieure logiciel / IA</b> et est <b>disponible immédiatement</b>. Tu peux la contacter par <a href='mailto:roubasouidi.pro@gmail.com'>email</a> ou sur <a href='https://linkedin.com/in/rouba-souidi' target='_blank'>LinkedIn</a> 🚀"},
- {k:['contact','mail','email','linkedin','joindre','ecrire','reach'],a:"📧 <a href='mailto:roubasouidi.pro@gmail.com'>roubasouidi.pro@gmail.com</a><br>💼 <a href='https://linkedin.com/in/rouba-souidi' target='_blank'>linkedin.com/in/rouba-souidi</a><br>🐙 <a href='https://github.com/Rouba21' target='_blank'>github.com/Rouba21</a>"},
- {k:['ou','localisation','ville','tunis','tunisie','pays','habite','remote','teletravail'],a:"Rouba est basée à Tunis 🇹🇳 et a déjà travaillé à distance avec la Belgique et la France, ainsi qu'en présentiel à Lyon. Elle est à l'aise en équipe internationale."},
- {k:['merci','thanks','super','cool','genial','top'],a:"Avec plaisir ! 💜 Autre chose que tu veux savoir sur Rouba ?"},
+ {k:['dispo','disponible','recrut','embauche','cherche','hire','cdi','temps','offre','opportunit'],a:"Rouba cherche un poste à temps plein d'<b>ingénieure logiciel / IA</b> et est <b>disponible immédiatement</b>. Tu peux la contacter par <a href='mailto:roubasouidi.pro@gmail.com'>email</a> ou sur <a href='https://linkedin.com/in/rouba-souidi' target='_blank'>LinkedIn</a>"},
+ {k:['contact','mail','email','linkedin','joindre','ecrire','reach'],a:"Email : <a href='mailto:roubasouidi.pro@gmail.com'>roubasouidi.pro@gmail.com</a><br>LinkedIn : <a href='https://linkedin.com/in/rouba-souidi' target='_blank'>linkedin.com/in/rouba-souidi</a><br>GitHub : <a href='https://github.com/Rouba21' target='_blank'>github.com/Rouba21</a>"},
+ {k:['ou','localisation','ville','tunis','tunisie','pays','habite','remote','teletravail'],a:"Rouba est basée à Tunis et a déjà travaillé à distance avec la Belgique et la France, ainsi qu'en présentiel à Lyon. Elle est à l'aise en équipe internationale."},
+ {k:['merci','thanks','super','cool','genial','top'],a:"Avec plaisir ! Autre chose que tu veux savoir sur Rouba ?"},
  {k:['client','relation','soft'],a:"Rouba échange directement avec les clients : recueil et reformulation des besoins, démos des fonctionnalités livrées, suivi et support après livraison."}
 ];
 const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ');
 function answer(q){
  const w=norm(q).split(/\s+/).filter(Boolean);let best=null,score=0;
  for(const e of KB){let s=0;for(const k of e.k){for(const x of w){if(x===k)s+=3;else if(x.length>2&&(x.startsWith(k)||k.startsWith(x)))s+=2}}if(s>score){score=s;best=e}}
- return best?best.a:"Hmm, je n'ai pas cette info 🤔 Essaie : expérience, projets, compétences, IA, formation, langues, disponibilité ou contact.";
+ return best?best.a:"Hmm, je n'ai pas cette info Essaie : expérience, projets, compétences, IA, formation, langues, disponibilité ou contact.";
 }
 
 /* ---------- UI du chat ---------- */
@@ -293,7 +293,7 @@ function botSay(html){const t=document.createElement('div');t.className='msg bot
  setTimeout(()=>{t.remove();add(html,'bot')},600+Math.min(html.length*6,1000))}
 function ask(q){add(q.replace(/</g,'&lt;'),'me');botSay(answer(q))}
 QUICK.forEach(q=>{const b=document.createElement('button');b.type='button';b.textContent=q;b.onclick=()=>ask(q);quick.appendChild(b)});
-function openChat(){chat.classList.add('open');input.focus();if(!started){started=true;botSay("Coucou ! Je suis <b>Rouba</b> 💜, l'assistante virtuelle de Rouba Souidi. Pose-moi une question sur son profil !")}}
+function openChat(){chat.classList.add('open');input.focus();if(!started){started=true;botSay("Coucou ! Je suis <b>Rouba</b>, l'assistante virtuelle de Rouba Souidi. Pose-moi une question sur son profil !")}}
 document.getElementById('fab').onclick=()=>chat.classList.contains('open')?chat.classList.remove('open'):openChat();
 document.getElementById('openChat2').onclick=openChat;
 document.getElementById('close').onclick=()=>chat.classList.remove('open');
