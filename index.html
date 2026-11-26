@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rouba Souidi — Ingénieure Logiciel & IA</title>
+<meta name="description" content="Portfolio de Rouba Souidi, ingénieure logiciel & IA. Discutez avec Rouba, son assistante virtuelle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0f0c29; --bg2:#1d1748; --card:rgba(255,255,255,.06); --line:rgba(255,255,255,.12);
+  --text:#f3f1ff; --muted:#b9b4d9; --accent:#ff6fb5; --accent2:#7c6cff; --ok:#3ee6b3;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Poppins,system-ui,sans-serif;color:var(--text);background:radial-gradient(circle at 20% 10%,#2b2167 0,var(--bg) 55%) fixed;min-height:100vh;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none}
+.stars{position:fixed;inset:0;pointer-events:none;z-index:0}
+.stars i{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.6;animation:tw 3s infinite ease-in-out}
+@keyframes tw{50%{opacity:.1}}
+main{position:relative;z-index:1;max-width:1150px;margin:0 auto;padding:32px 16px 120px}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:center;min-height:82vh}
+.stage{position:relative;display:flex;justify-content:center}
+.stage svg{width:min(380px,90vw);height:auto;filter:drop-shadow(0 20px 40px rgba(240,106,16,.35))}
+.float{animation:float 4s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+.arm{transform-origin:262px 312px;animation:wave 1.6s ease-in-out infinite}
+@keyframes wave{0%,100%{transform:rotate(0)}25%{transform:rotate(-22deg)}50%{transform:rotate(6deg)}75%{transform:rotate(-18deg)}}
+.blink{transform-origin:center 150px;transform-box:fill-box;animation:blink 4.5s infinite}
+@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.mouth{transform-origin:center;transform-box:fill-box}
+.talking .mouth{animation:talk .22s infinite alternate}
+@keyframes talk{to{transform:scaleY(2.2)}}
+.spark{animation:spark 2.4s infinite ease-in-out}
+.spark:nth-child(2){animation-delay:.8s}.spark:nth-child(3){animation-delay:1.6s}
+@keyframes spark{0%,100%{opacity:0;transform:scale(.5)}50%{opacity:1;transform:scale(1)}}
+.screen-line{animation:code 2s infinite steps(4)}
+@keyframes code{0%{width:0}100%{width:40px}}
+
+.bubble{background:#fff;color:#2a2350;border-radius:22px;padding:22px 24px;position:relative;font-size:1.05rem;line-height:1.6;min-height:150px;box-shadow:0 10px 40px rgba(0,0,0,.3)}
+.bubble:before{content:"";position:absolute;left:-14px;top:50px;border:14px solid transparent;border-right-color:#fff;border-left:0}
+.bubble .cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent2);vertical-align:-3px;animation:tw .8s infinite}
+.bubble-controls{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btn{border:0;cursor:pointer;font:600 .92rem Poppins,sans-serif;padding:11px 18px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+h1{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;margin-bottom:6px}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{color:var(--muted);margin-bottom:22px}
+.tag-open{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;background:rgba(62,230,179,.12);color:var(--ok);padding:6px 12px;border-radius:999px;margin-bottom:14px}
+.tag-open:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok)}
+
+
+/* PORTRAIT ANIMÉ */
+.portrait{position:relative;width:min(400px,86vw);perspective:900px}
+.frame{border-radius:32px;overflow:hidden;border:4px solid rgba(255,255,255,.15);box-shadow:0 25px 60px rgba(124,108,255,.45);animation:bob 5s ease-in-out infinite;transform-style:preserve-3d;transition:transform .2s}
+.frame img{display:block;width:100%;height:auto;animation:breathe 4s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes bob{0%,100%{translate:0 0;rotate:-1.5deg}50%{translate:0 -14px;rotate:1.5deg}}
+@keyframes breathe{0%,100%{scale:1.04}50%{scale:1.075}}
+.talking .frame img{animation:breathe 4s ease-in-out infinite,nod .5s ease-in-out infinite}
+@keyframes nod{50%{translate:0 3px}}
+.wave{position:absolute;right:-6px;top:38%;font-size:3rem;transform-origin:70% 80%;animation:wave 1.4s ease-in-out infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4))}
+@keyframes wave{0%,100%{transform:rotate(0)}20%{transform:rotate(-25deg)}40%{transform:rotate(12deg)}60%{transform:rotate(-20deg)}80%{transform:rotate(8deg)}}
+.hello{position:absolute;left:-18px;top:-18px;z-index:2;background:#fff;color:#2a2350;font-weight:700;padding:10px 16px;border-radius:18px 18px 18px 4px;box-shadow:0 8px 24px rgba(0,0,0,.35);animation:pop2 4s ease-in-out infinite}
+@keyframes pop2{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-6px) scale(1.05)}}
+.hello.swap{animation:swap .4s ease}
+@keyframes swap{from{opacity:0;transform:scale(.6)}}
+.sp{position:absolute;color:#ffd36e;font-size:1.6rem;animation:spark 2.4s infinite ease-in-out}
+.s1{left:-22px;bottom:20%}.s2{right:8%;top:-24px;animation-delay:.8s}.s3{right:-24px;bottom:8%;animation-delay:1.6s}
+
+/* SECTIONS */
+section{margin-top:70px}
+h2{font-size:1.6rem;margin-bottom:22px}
+h2 small{display:block;color:var(--muted);font-size:.9rem;font-weight:400}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;backdrop-filter:blur(6px);transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--accent2)}
+.card h3{font-size:1.05rem;margin-bottom:4px}
+.card .meta{color:var(--accent);font-size:.82rem;margin-bottom:10px}
+.card p,.card li{color:var(--muted);font-size:.92rem;line-height:1.55}
+.card ul{padding-left:18px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.82rem;padding:6px 12px;border-radius:999px;background:rgba(124,108,255,.15);border:1px solid rgba(124,108,255,.35)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:26px}
+.stat{text-align:center;padding:16px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.stat b{display:block;font-size:1.8rem;color:var(--accent)}
+.stat span{font-size:.82rem;color:var(--muted)}
+footer{text-align:center;color:var(--muted);margin-top:80px;font-size:.88rem}
+footer .links{display:flex;justify-content:center;gap:18px;margin-bottom:10px;flex-wrap:wrap}
+
+/* CHATBOT */
+.chat-fab{position:fixed;right:20px;bottom:20px;z-index:20;width:64px;height:64px;border-radius:50%;border:0;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 10px 30px rgba(255,111,181,.45);display:grid;place-items:center;animation:pulse 2.4s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,111,181,.5)}50%{box-shadow:0 0 0 14px rgba(255,111,181,0)}}
+.chat-fab img{width:58px;height:58px;border:2px solid #fff}
+.chat{position:fixed;right:20px;bottom:96px;z-index:20;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 130px));background:#17133a;border:1px solid var(--line);border-radius:22px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);transform:translateY(20px) scale(.96);opacity:0;pointer-events:none;transition:.25s}
+.chat.open{transform:none;opacity:1;pointer-events:auto}
+.chat-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+.chat-head .av{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden}
+.chat-head b{display:block}
+.chat-head small{opacity:.9;font-size:.78rem}
+.chat-head button{margin-left:auto;background:none;border:0;color:#fff;font-size:1.4rem;cursor:pointer}
+.msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
+.msg{max-width:85%;padding:10px 14px;border-radius:16px;font-size:.9rem;line-height:1.5;animation:pop .25s ease}
+@keyframes pop{from{opacity:0;transform:translateY(6px)}}
+.msg.bot{background:rgba(255,255,255,.08);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.me{background:linear-gradient(135deg,var(--accent2),var(--accent));border-bottom-right-radius:4px;align-self:flex-end}
+.msg a{color:#ffd1ea;text-decoration:underline}
+.typing{display:flex;gap:4px;padding:12px 14px}
+.typing i{width:7px;height:7px;border-radius:50%;background:var(--muted);animation:dot 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes dot{50%{transform:translateY(-5px);opacity:.4}}
+.quick{display:flex;gap:6px;flex-wrap:wrap;padding:0 16px 10px}
+.quick button{font:500 .78rem Poppins,sans-serif;padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer}
+.quick button:hover{border-color:var(--accent)}
+.chat form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line)}
+.chat input{flex:1;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:999px;padding:10px 14px;color:var(--text);font:inherit;font-size:.9rem;outline:none}
+.chat input:focus{border-color:var(--accent2)}
+.chat form button{border:0;border-radius:50%;width:42px;height:42px;cursor:pointer;background:var(--accent);color:#fff;font-size:1.1rem}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;text-align:center;min-height:auto;padding-top:10px}
+  .bubble{text-align:left}
+  .bubble:before{left:50%;top:-14px;border:14px solid transparent;border-bottom-color:#fff;border-top:0;transform:translateX(-50%)}
+  .bubble-controls{justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<main>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="stage">
+    <div class="portrait" id="avatar">
+      <div class="hello" id="hello">Hello ! 👋</div>
+      <div class="frame" id="frame"><img src="rouba.jpg" alt="Rouba Souidi, illustration"></div>
+      <span class="wave">👋</span>
+      <span class="sp s1">✦</span><span class="sp s2">✦</span><span class="sp s3">✦</span>
+    </div>
+  </div>
+
+  <div>
+    <div class="tag-open">Disponible immédiatement</div>
+    <h1>Salut, moi c'est <span>Rouba</span></h1>
+    <p class="role">Ingénieure Logiciel & IA · Business Intelligence · Tunis</p>
+    <div class="bubble"><span id="say"></span><span class="cursor"></span></div>
+    <div class="bubble-controls">
+      <button class="btn" id="next">Suivant ➜</button>
+      <button class="btn ghost" id="openChat2">💬 Discuter avec Rouba</button>
+    </div>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat"><b>23</b><span>fonctionnalités en production</span></div>
+  <div class="stat"><b>32</b><span>tests automatisés</span></div>
+  <div class="stat"><b>4</b><span>langues parlées</span></div>
+  <div class="stat"><b>6</b><span>certifications</span></div>
+</div>
+
+<!-- EXPERIENCE -->
+<section>
+  <h2>Expérience <small>Ce que j'ai construit</small></h2>
+  <div class="grid">
+    <div class="card"><h3>Développeuse IA — Boldys AI</h3><div class="meta">2026 – Présent · Télétravail, Belgique</div>
+      <ul><li>WaaS : plateforme SaaS multi-tenant d'automatisation WhatsApp Business, en production chez plusieurs clients</li>
+      <li>Moteur multi-agents LangGraph / LangChain (GPT-4o) + RAG</li>
+      <li>Prise de RDV en conversation via MCP</li>
+      <li>Django, Celery, Redis, PostgreSQL, Docker, Coolify</li></ul></div>
+    <div class="card"><h3>Ingénieure Logiciel — Advyteam Accretio & INRAE</h3><div class="meta">2025 · Lyon, France</div>
+      <ul><li>Plateforme collaborative : mise en relation, appels, réservation de salles</li><li>Product Owner & QA fonctionnelle</li></ul></div>
+    <div class="card"><h3>Ingénieure ERP — ISEP Paris & ESPRIT</h3><div class="meta">2024</div>
+      <ul><li>Déploiement et optimisation d'un WMS</li><li>Modules ERP avec Spring Boot et Flutter</li></ul></div>
+    <div class="card"><h3>Ingénieure Cloud ERP — Sekceram</h3><div class="meta">2023 · Algérie</div>
+      <ul><li>Tableau de bord ERP sécurisé</li><li>Oracle Cloud ERP</li></ul></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+  <h2>Projets <small>Side projects & recherche</small></h2>
+  <div class="grid">
+    <div class="card"><h3>Baebles</h3><div class="meta"><a href="https://baebles.com" target="_blank" rel="noopener">baebles.com</a> · 2026</div><p>Application communautaire pour les amateurs de fantasy : découverte de livres, rencontres entre lecteurs, suivi de lecture. Android & iOS.</p></div>
+    <div class="card"><h3>Banti</h3><div class="meta"><a href="https://banti.app" target="_blank" rel="noopener">banti.app</a> · 2026</div><p>Mise en relation fondateurs, freelances et investisseurs avec matching intelligent. iOS & Android.</p></div>
+    <div class="card"><h3>IA & marché de l'emploi</h3><div class="meta">NLP · RAG · Sentiment Analysis · 2025</div><p>Analyse de tweets et posts LinkedIn (Sentiment140) pour mesurer l'impact de l'IA sur l'emploi.</p></div>
+    <div class="card"><h3>Classification d'œuvres d'art</h3><div class="meta">Deep Learning · CNN · WikiArt · 2025</div><p>Reconnaissance de styles artistiques par réseaux convolutifs.</p></div>
+    <div class="card"><h3>Smart Healthcare Predictor</h3><div class="meta">Angular · Flask · Power BI · ML/DL · 2025</div><p>Prédiction de la mortalité et de la durée de séjour des patients.</p></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section>
+  <h2>Compétences</h2>
+  <div class="chips">
+    <span class="chip">LangGraph</span><span class="chip">LangChain</span><span class="chip">RAG</span><span class="chip">GPT-4o</span><span class="chip">MCP</span><span class="chip">NLP</span><span class="chip">Deep Learning</span>
+    <span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">Java</span><span class="chip">Django</span><span class="chip">Spring Boot</span><span class="chip">Node.js</span>
+    <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Angular</span><span class="chip">Flutter</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">Supabase</span>
+    <span class="chip">Docker</span><span class="chip">Azure</span><span class="chip">AWS</span><span class="chip">CI/CD</span><span class="chip">Power BI</span><span class="chip">Dynamics 365</span><span class="chip">Odoo</span><span class="chip">SAP</span>
+  </div>
+</section>
+
+<footer>
+  <div class="links">
+    <a href="mailto:roubasouidi.pro@gmail.com">✉ Email</a>
+    <a href="https://linkedin.com/in/rouba-souidi" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/Rouba21" target="_blank" rel="noopener">GitHub</a>
+  </div>
+  © 2026 Rouba Souidi · Fait avec ❤ et beaucoup de café
+</footer>
+</main>
+
+<!-- CHATBOT -->
+<button class="chat-fab" id="fab" aria-label="Ouvrir le chat avec Rouba">
+  <img src="rouba-face.jpg" alt="Rouba" width="58" height="58" style="border-radius:50%;display:block">
+</button>
+<div class="chat" id="chat" role="dialog" aria-label="Chat avec Rouba">
+  <div class="chat-head">
+    <div class="av"><img src="rouba-face.jpg" alt="Rouba" width="40" height="40" style="border-radius:50%;display:block"></div>
+    <div><b>Rouba</b><small>Assistante virtuelle · en ligne</small></div>
+    <button id="close" aria-label="Fermer">×</button>
+  </div>
+  <div class="msgs" id="msgs"></div>
+  <div class="quick" id="quick"></div>
+  <form id="form"><input id="input" placeholder="Pose-moi une question…" autocomplete="off"><button aria-label="Envoyer">➤</button></form>
+</div>
+
+<script>
+/* ---------- étoiles ---------- */
+const stars=document.getElementById('stars');
+for(let i=0;i<70;i++){const s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';stars.appendChild(s)}
+
+/* ---------- présentation du personnage ---------- */
+const lines=[
+ "Hello & welcome to my profile ! 👋 Bienvenue, vous êtes le bienvenu ici. Je suis Rouba Souidi, ingénieure diplômée en IA & Business Intelligence (ESPRIT, 2026).",
+ "Aujourd'hui je développe des agents IA chez Boldys AI : LangGraph, RAG, GPT-4o… et une plateforme SaaS WhatsApp en production.",
+ "J'aime tout le cycle produit : backend, frontend, mobile, déploiement… et parler avec les clients !",
+ "Côté side projects : Baebles 📚 pour les fans de fantasy, et Banti 🚀 pour connecter fondateurs et investisseurs.",
+ "Je cherche un poste à temps plein d'ingénieure logiciel / IA, et je suis disponible tout de suite ✨",
+ "Une question ? Clique sur « Discuter avec Rouba » : mon assistante te répond sur mon parcours !"
+];
+let li=0,timer;const say=document.getElementById('say'),avatar=document.getElementById('avatar');
+function speak(t){clearInterval(timer);say.textContent='';let i=0;avatar.classList.add('talking');
+ timer=setInterval(()=>{say.textContent+=t[i++];if(i>=t.length){clearInterval(timer);avatar.classList.remove('talking')}},28)}
+document.getElementById('next').onclick=()=>{li=(li+1)%lines.length;speak(lines[li])};
+setTimeout(()=>speak(lines[0]),500);
+
+
+/* bulle bonjour animée + inclinaison 3D à la souris */
+const hellos=["Hello ! 👋","Welcome to my profile ✨","Bienvenue ! 💜","Vous êtes le bienvenu 😊"];let hi=0;const hello=document.getElementById('hello');
+setInterval(()=>{hi=(hi+1)%hellos.length;hello.textContent=hellos[hi];hello.classList.remove('swap');void hello.offsetWidth;hello.classList.add('swap')},2600);
+const frame=document.getElementById('frame');
+document.addEventListener('mousemove',e=>{const r=frame.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)/window.innerWidth,y=(e.clientY-r.top-r.height/2)/window.innerHeight;frame.style.transform=`rotateY(${x*18}deg) rotateX(${-y*14}deg)`});
+
+/* ---------- base de connaissances du chatbot ---------- */
+const KB=[
+ {k:['bonjour','salut','hello','hi','hey','coucou','salam'],a:"Salut ! 😊 Je suis Rouba, l'assistante de Rouba Souidi. Demande-moi son expérience, ses projets, ses compétences, sa formation ou comment la contacter."},
+ {k:['qui','presente','profil','toi','about','resume'],a:"Rouba Souidi est ingénieure logiciel & IA, diplômée d'ESPRIT (2026) en Intelligence Artificielle & Business Intelligence. Elle couvre tout le cycle produit — backend, frontend, mobile, déploiement, suivi client — et a livré en production des plateformes SaaS et des agents IA (LangGraph, RAG)."},
+ {k:['boldys','actuel','poste','travail','job','waas','whatsapp','maintenant'],a:"Depuis 2026, Rouba est développeuse IA chez <b>Boldys AI</b> (télétravail, Belgique). Elle a conçu <b>WaaS</b>, une plateforme SaaS multi-tenant d'automatisation conversationnelle sur WhatsApp Business : moteur multi-agents LangGraph/LangChain + GPT-4o, RAG, prise de RDV via MCP, 23 fonctionnalités en production, 32 tests automatisés."},
+ {k:['experience','parcours','carriere','entreprise','stage','advyteam','inrae','sekceram','isep','erp','wms'],a:"Son parcours :<br>• <b>Boldys AI</b> (2026–) — Développeuse IA<br>• <b>Advyteam Accretio & INRAE</b> (2025, Lyon) — Ingénieure logiciel, Product Owner & QA<br>• <b>ISEP Paris & ESPRIT</b> (2024) — Ingénieure ERP, projet WMS (Spring Boot, Flutter)<br>• <b>Sekceram</b> (2023, Algérie) — Ingénieure Cloud ERP (Oracle)"},
+ {k:['projet','project','baebles','banti','side','application','app','portfolio'],a:"Ses projets phares :<br>• <b>Baebles</b> (<a href='https://baebles.com' target='_blank'>baebles.com</a>) — appli communautaire pour fans de fantasy, sur Android & iOS<br>• <b>Banti</b> (<a href='https://banti.app' target='_blank'>banti.app</a>) — matching fondateurs / freelances / investisseurs<br>• Étude NLP de l'impact de l'IA sur l'emploi<br>• Classification d'œuvres d'art (CNN)<br>• Smart Healthcare Predictor (Angular, Flask, Power BI)"},
+ {k:['ia','ai','intelligence','langgraph','langchain','rag','llm','gpt','agent','nlp','machine','deep','mcp'],a:"En IA, Rouba maîtrise LangGraph, LangChain, RAG, NLP, Machine & Deep Learning, Sentiment Analysis, GPT-4o / OpenAI API et MCP (Model Context Protocol). Elle a mis en production un moteur multi-agents chez Boldys AI. Certifiée NVIDIA Deep Learning et Generative AI."},
+ {k:['competence','skill','stack','techno','langage','python','java','react','django','angular','flutter','framework','outil'],a:"Sa stack :<br>• <b>Langages</b> : Python, Java, JS/TS, PHP, C/C++, SQL<br>• <b>Backend</b> : Django/DRF, Spring Boot, Symfony, Node.js, Celery<br>• <b>Front & mobile</b> : React, Next.js, Angular, Flutter, Tailwind<br>• <b>BDD</b> : PostgreSQL, MySQL, MongoDB, Supabase<br>• <b>DevOps</b> : Docker, Coolify, Azure, AWS, CI/CD, Redis"},
+ {k:['bi','business','power','dynamics','sap','odoo','oracle','data','dashboard'],a:"Côté ERP & BI : Power BI (DAX, Power Query), Power Apps, Power Automate, Dynamics 365 FO, Oracle Cloud ERP, SAP et Odoo."},
+ {k:['devops','docker','cloud','aws','azure','deploiement','ci'],a:"Rouba déploie avec Docker et Coolify (CI/CD, environnements de recette par Pull Request), et travaille sur Azure et AWS (certifiée AWS Cloud Foundations)."},
+ {k:['formation','etude','diplome','ecole','esprit','universite','education','bac','monastir'],a:"Formation :<br>• <b>ESPRIT</b> (2023–2026) — Diplôme d'Ingénieur, IA & Business Intelligence<br>• <b>FSM Monastir</b> (2020–2023) — Prépa Maths-Physique<br>• Bac Sciences expérimentales (2020, Soliman)"},
+ {k:['certif','nvidia','certification'],a:"Certifications : NVIDIA Deep Learning, NVIDIA Generative AI Explained, Microsoft Dynamics 365 Fundamentals, AWS Cloud Foundations, Hashgraph Developer, Mastering Maven."},
+ {k:['langue','language','anglais','francais','arabe','allemand','english'],a:"Arabe (langue maternelle), Français et Anglais courants, Allemand A2."},
+ {k:['ieee','associatif','leadership','benevol','club','hult','enactus'],a:"Très engagée : Vice-Présidente IEEE ESPRIT Student Branch, Secrétaire Générale IEEE Computer Society, Vice-Présidente WIE ACT 3 Congress, Coordinatrice logistique Hult Prize ESPRIT, participante IEEE Region 8 SYP Congress (Grenoble)…"},
+ {k:['agile','scrum','methode','kanban','product','owner'],a:"Méthodes : Scrum, Kanban, Scrumban, CRISP-DM, Design Science Research. Elle a aussi été Product Owner (backlog, user stories, priorisation)."},
+ {k:['dispo','disponible','recrut','embauche','cherche','hire','cdi','temps','offre','opportunit'],a:"Rouba cherche un poste à temps plein d'<b>ingénieure logiciel / IA</b> et est <b>disponible immédiatement</b>. Tu peux la contacter par <a href='mailto:roubasouidi.pro@gmail.com'>email</a> ou sur <a href='https://linkedin.com/in/rouba-souidi' target='_blank'>LinkedIn</a> 🚀"},
+ {k:['contact','mail','email','linkedin','joindre','ecrire','reach'],a:"📧 <a href='mailto:roubasouidi.pro@gmail.com'>roubasouidi.pro@gmail.com</a><br>💼 <a href='https://linkedin.com/in/rouba-souidi' target='_blank'>linkedin.com/in/rouba-souidi</a><br>🐙 <a href='https://github.com/Rouba21' target='_blank'>github.com/Rouba21</a>"},
+ {k:['ou','localisation','ville','tunis','tunisie','pays','habite','remote','teletravail'],a:"Rouba est basée à Tunis 🇹🇳 et a déjà travaillé à distance avec la Belgique et la France, ainsi qu'en présentiel à Lyon. Elle est à l'aise en équipe internationale."},
+ {k:['merci','thanks','super','cool','genial','top'],a:"Avec plaisir ! 💜 Autre chose que tu veux savoir sur Rouba ?"},
+ {k:['client','relation','soft'],a:"Rouba échange directement avec les clients : recueil et reformulation des besoins, démos des fonctionnalités livrées, suivi et support après livraison."}
+];
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ');
+function answer(q){
+ const w=norm(q).split(/\s+/).filter(Boolean);let best=null,score=0;
+ for(const e of KB){let s=0;for(const k of e.k){for(const x of w){if(x===k)s+=3;else if(x.length>2&&(x.startsWith(k)||k.startsWith(x)))s+=2}}if(s>score){score=s;best=e}}
+ return best?best.a:"Hmm, je n'ai pas cette info 🤔 Essaie : expérience, projets, compétences, IA, formation, langues, disponibilité ou contact.";
+}
+
+/* ---------- UI du chat ---------- */
+const chat=document.getElementById('chat'),msgs=document.getElementById('msgs'),input=document.getElementById('input'),quick=document.getElementById('quick');
+const QUICK=['Qui es-tu ?','Expérience','Projets','Compétences IA','Formation','Disponibilité','Contact'];
+let started=false;
+function add(html,who){const d=document.createElement('div');d.className='msg '+who;d.innerHTML=html;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
+function botSay(html){const t=document.createElement('div');t.className='msg bot typing';t.innerHTML='<i></i><i></i><i></i>';msgs.appendChild(t);msgs.scrollTop=msgs.scrollHeight;
+ setTimeout(()=>{t.remove();add(html,'bot')},600+Math.min(html.length*6,1000))}
+function ask(q){add(q.replace(/</g,'&lt;'),'me');botSay(answer(q))}
+QUICK.forEach(q=>{const b=document.createElement('button');b.type='button';b.textContent=q;b.onclick=()=>ask(q);quick.appendChild(b)});
+function openChat(){chat.classList.add('open');input.focus();if(!started){started=true;botSay("Coucou ! Je suis <b>Rouba</b> 💜, l'assistante virtuelle de Rouba Souidi. Pose-moi une question sur son profil !")}}
+document.getElementById('fab').onclick=()=>chat.classList.contains('open')?chat.classList.remove('open'):openChat();
+document.getElementById('openChat2').onclick=openChat;
+document.getElementById('close').onclick=()=>chat.classList.remove('open');
+document.getElementById('form').onsubmit=e=>{e.preventDefault();const q=input.value.trim();if(q){ask(q);input.value=''}};
+</script>
+</body>
+</html>
