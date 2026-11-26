@@ -298,6 +298,9 @@ document.getElementById('fab').onclick=()=>chat.classList.contains('open')?chat.
 document.getElementById('openChat2').onclick=openChat;
 document.getElementById('close').onclick=()=>chat.classList.remove('open');
 document.getElementById('form').onsubmit=e=>{e.preventDefault();const q=input.value.trim();if(q){ask(q);input.value=''}};
+
+/* ouverture auto du chat depuis le profil GitHub : ?chat=1 ou ?q=question */
+(()=>{const u=new URLSearchParams(location.search);const q=u.get('q');if(q||u.has('chat')){setTimeout(()=>{openChat();if(q)setTimeout(()=>ask(q),1400)},700)}})();
 </script>
 </body>
 </html>
