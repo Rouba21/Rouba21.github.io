@@ -4,106 +4,130 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rouba Souidi — Ingénieure IA & Business Intelligence</title>
-<meta name="description" content="Portfolio de Rouba Souidi, ingénieure logiciel & IA. Discutez avec Rouba, son assistante virtuelle.">
+<meta name="description" content="Portfolio de Rouba Souidi, ingénieure IA & Business Intelligence. Discutez avec Rouba, son assistante virtuelle. / Portfolio of Rouba Souidi, AI & BI engineer.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#0f0c29; --bg2:#1d1748; --card:rgba(255,255,255,.06); --line:rgba(255,255,255,.12);
-  --text:#f3f1ff; --muted:#b9b4d9; --accent:#ff6fb5; --accent2:#7c6cff; --ok:#3ee6b3;
-}
+:root{--bg:#0f0c29;--card:rgba(255,255,255,.055);--line:rgba(255,255,255,.12);--text:#f3f1ff;--muted:#b9b4d9;--accent:#ff6fb5;--accent2:#7c6cff;--ok:#3ee6b3;--gold:#ffd36e}
 *{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+html[lang=en] .fr,html:not([lang=en]) .en{display:none!important}
 body{font-family:Poppins,system-ui,sans-serif;color:var(--text);background:radial-gradient(circle at 20% 10%,#2b2167 0,var(--bg) 55%) fixed;min-height:100vh;overflow-x:hidden}
 a{color:var(--accent);text-decoration:none}
 .stars{position:fixed;inset:0;pointer-events:none;z-index:0}
 .stars i{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;opacity:.6;animation:tw 3s infinite ease-in-out}
 @keyframes tw{50%{opacity:.1}}
-main{position:relative;z-index:1;max-width:1150px;margin:0 auto;padding:32px 16px 120px}
-
-/* HERO */
-.hero{display:grid;grid-template-columns:1fr 1.1fr;gap:32px;align-items:center;min-height:82vh}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;z-index:40;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(15,12,41,.72);border-bottom:1px solid var(--line)}
+nav .in{max-width:1150px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:18px}
+nav .logo{font-weight:800;color:var(--text);letter-spacing:.5px}
+nav .logo b{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav .links{display:flex;gap:18px;margin-left:auto;font-size:.9rem}
+nav .links a{color:var(--muted);transition:color .2s}
+nav .links a:hover,nav .links a.on{color:var(--text)}
+.lang{display:flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;flex:none}
+.lang button{background:none;border:0;color:var(--muted);font:600 .8rem Poppins,sans-serif;padding:6px 12px;cursor:pointer}
+.lang button.on{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff}
+@media(max-width:820px){nav .links{display:none}.lang{margin-left:auto}}
+main{position:relative;z-index:1;max-width:1150px;margin:0 auto;padding:24px 16px 120px}
+.hero{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center;min-height:80vh}
 .stage{position:relative;display:flex;justify-content:center}
-.stage svg{width:min(380px,90vw);height:auto;filter:drop-shadow(0 20px 40px rgba(240,106,16,.35))}
-.float{animation:float 4s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-10px)}}
-.arm{transform-origin:262px 312px;animation:wave 1.6s ease-in-out infinite}
-@keyframes wave{0%,100%{transform:rotate(0)}25%{transform:rotate(-22deg)}50%{transform:rotate(6deg)}75%{transform:rotate(-18deg)}}
-.blink{transform-origin:center 150px;transform-box:fill-box;animation:blink 4.5s infinite}
-@keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
-.mouth{transform-origin:center;transform-box:fill-box}
-.talking .mouth{animation:talk .22s infinite alternate}
-@keyframes talk{to{transform:scaleY(2.2)}}
-.spark{animation:spark 2.4s infinite ease-in-out}
-.spark:nth-child(2){animation-delay:.8s}.spark:nth-child(3){animation-delay:1.6s}
-@keyframes spark{0%,100%{opacity:0;transform:scale(.5)}50%{opacity:1;transform:scale(1)}}
-.screen-line{animation:code 2s infinite steps(4)}
-@keyframes code{0%{width:0}100%{width:40px}}
-
-.bubble{background:#fff;color:#2a2350;border-radius:22px;padding:22px 24px;position:relative;font-size:1.05rem;line-height:1.6;min-height:150px;box-shadow:0 10px 40px rgba(0,0,0,.3)}
-.bubble:before{content:"";position:absolute;left:-14px;top:50px;border:14px solid transparent;border-right-color:#fff;border-left:0}
-.bubble .cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent2);vertical-align:-3px;animation:tw .8s infinite}
-.bubble-controls{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
-.btn{border:0;cursor:pointer;font:600 .92rem Poppins,sans-serif;padding:11px 18px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;transition:transform .15s}
-.btn:hover{transform:translateY(-2px)}
-.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
-h1{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;margin-bottom:6px}
-h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
-.role{color:var(--muted);margin-bottom:22px}
-.tag-open{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;background:rgba(62,230,179,.12);color:var(--ok);padding:6px 12px;border-radius:999px;margin-bottom:14px}
-.tag-open:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok)}
-
-
-/* PORTRAIT ANIMÉ */
 .portrait{position:relative;width:min(400px,86vw);perspective:900px}
-.frame{border-radius:32px;overflow:hidden;border:4px solid rgba(255,255,255,.15);box-shadow:0 25px 60px rgba(124,108,255,.45);animation:bob 5s ease-in-out infinite;transform-style:preserve-3d;transition:transform .2s}
+.frame{border-radius:32px;overflow:hidden;border:4px solid rgba(255,255,255,.15);box-shadow:0 25px 60px rgba(124,108,255,.45);animation:bob 5s ease-in-out infinite;transform-style:preserve-3d;transition:transform .2s;cursor:pointer}
 .frame img{display:block;width:100%;height:auto;animation:breathe 4s ease-in-out infinite;transform-origin:50% 90%}
 @keyframes bob{0%,100%{translate:0 0;rotate:-1.5deg}50%{translate:0 -14px;rotate:1.5deg}}
 @keyframes breathe{0%,100%{scale:1.04}50%{scale:1.075}}
 .talking .frame img{animation:breathe 4s ease-in-out infinite,nod .5s ease-in-out infinite}
 @keyframes nod{50%{translate:0 3px}}
-.wave{position:absolute;right:-6px;top:38%;font-size:3rem;transform-origin:70% 80%;animation:wave 1.4s ease-in-out infinite;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4))}
-@keyframes wave{0%,100%{transform:rotate(0)}20%{transform:rotate(-25deg)}40%{transform:rotate(12deg)}60%{transform:rotate(-20deg)}80%{transform:rotate(8deg)}}
 .hello{position:absolute;left:-18px;top:-18px;z-index:2;background:#fff;color:#2a2350;font-weight:700;padding:10px 16px;border-radius:18px 18px 18px 4px;box-shadow:0 8px 24px rgba(0,0,0,.35);animation:pop2 4s ease-in-out infinite}
-@keyframes pop2{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-6px) scale(1.05)}}
+@keyframes pop2{50%{transform:translateY(-6px) scale(1.05)}}
 .hello.swap{animation:swap .4s ease}
 @keyframes swap{from{opacity:0;transform:scale(.6)}}
-.sp{position:absolute;color:#ffd36e;font-size:1.6rem;animation:spark 2.4s infinite ease-in-out}
+.sp{position:absolute;color:var(--gold);font-size:1.6rem;animation:spark 2.4s infinite ease-in-out}
 .s1{left:-22px;bottom:20%}.s2{right:8%;top:-24px;animation-delay:.8s}.s3{right:-24px;bottom:8%;animation-delay:1.6s}
-
-/* SECTIONS */
-section{margin-top:70px}
-h2{font-size:1.6rem;margin-bottom:22px}
+@keyframes spark{0%,100%{opacity:0;transform:scale(.5)}50%{opacity:1;transform:scale(1)}}
+.hint{position:absolute;bottom:-34px;left:0;right:0;text-align:center;color:var(--muted);font-size:.78rem}
+.tag-open{display:inline-flex;align-items:center;gap:8px;font-size:.85rem;background:rgba(62,230,179,.12);color:var(--ok);padding:6px 12px;border-radius:999px;margin-bottom:14px}
+.tag-open:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);box-shadow:0 0 10px var(--ok);animation:tw 1.6s infinite}
+h1{font-size:clamp(2rem,4.5vw,3.2rem);line-height:1.1;margin-bottom:8px}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{color:var(--muted);margin-bottom:6px}
+.typed{font-weight:600;color:var(--text);min-height:1.6em;margin-bottom:20px}
+.typed b{color:var(--accent)}
+.typed .c{display:inline-block;width:2px;height:1.1em;background:var(--accent);vertical-align:-3px;margin-left:2px;animation:tw .8s infinite}
+.bubble{background:#fff;color:#2a2350;border-radius:22px;padding:22px 24px;position:relative;font-size:1.02rem;line-height:1.6;min-height:140px;box-shadow:0 10px 40px rgba(0,0,0,.3)}
+.bubble:before{content:"";position:absolute;left:-14px;top:50px;border:14px solid transparent;border-right-color:#fff;border-left:0}
+.bubble .cursor{display:inline-block;width:2px;height:1.1em;background:var(--accent2);vertical-align:-3px;animation:tw .8s infinite}
+.bubble-controls{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;align-items:center}
+.btn{border:0;cursor:pointer;font:600 .92rem Poppins,sans-serif;padding:11px 18px;border-radius:999px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;transition:transform .15s,box-shadow .15s;display:inline-block}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,111,181,.35)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+.dots{display:flex;gap:6px;align-items:center;margin-left:4px}
+.dots i{width:7px;height:7px;border-radius:50%;background:var(--line);transition:.3s}
+.dots i.on{background:var(--accent);width:18px;border-radius:4px}
+section{margin-top:90px;scroll-margin-top:80px}
+h2{font-size:1.7rem;margin-bottom:24px}
 h2 small{display:block;color:var(--muted);font-size:.9rem;font-weight:400}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;backdrop-filter:blur(6px);transition:transform .2s,border-color .2s}
-.card:hover{transform:translateY(-4px);border-color:var(--accent2)}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;transition:transform .25s,border-color .25s;overflow:hidden}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(300px circle at var(--x,50%) var(--y,50%),rgba(124,108,255,.18),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{transform:translateY(-4px);border-color:rgba(124,108,255,.6)}
+.card:hover:before{opacity:1}
 .card h3{font-size:1.05rem;margin-bottom:4px}
 .card .meta{color:var(--accent);font-size:.82rem;margin-bottom:10px}
 .card p,.card li{color:var(--muted);font-size:.92rem;line-height:1.55}
 .card ul{padding-left:18px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font-size:.82rem;padding:6px 12px;border-radius:999px;background:rgba(124,108,255,.15);border:1px solid rgba(124,108,255,.35)}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:26px}
-.stat{text-align:center;padding:16px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
-.stat b{display:block;font-size:1.8rem;color:var(--accent)}
+.chip{font-size:.82rem;padding:6px 12px;border-radius:999px;background:rgba(124,108,255,.15);border:1px solid rgba(124,108,255,.35);transition:.2s;cursor:default}
+.chip:hover{background:linear-gradient(135deg,var(--accent),var(--accent2));border-color:transparent;transform:translateY(-2px)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin-top:40px}
+.stat{text-align:center;padding:18px;border-radius:16px;background:var(--card);border:1px solid var(--line)}
+.stat b{display:block;font-size:2rem;color:var(--accent)}
 .stat span{font-size:.82rem;color:var(--muted)}
+.tabs{display:grid;grid-template-columns:240px 1fr;gap:20px}
+.tablist{display:flex;flex-direction:column;border-left:2px solid var(--line)}
+.tablist button{background:none;border:0;color:var(--muted);text-align:left;font:500 .92rem Poppins,sans-serif;padding:12px 16px;cursor:pointer;border-left:2px solid transparent;margin-left:-2px;transition:.2s}
+.tablist button small{display:block;font-size:.75rem;opacity:.7}
+.tablist button:hover{color:var(--text);background:rgba(255,255,255,.03)}
+.tablist button.on{color:var(--text);border-left-color:var(--accent);background:rgba(255,111,181,.07)}
+.panel{display:none;animation:fade .35s ease}
+.panel.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}}
+@media(max-width:720px){.tabs{grid-template-columns:1fr}.tablist{flex-direction:row;overflow-x:auto;border-left:0;border-bottom:2px solid var(--line)}.tablist button{border-left:0;border-bottom:2px solid transparent;margin:0 0 -2px;white-space:nowrap}.tablist button.on{border-bottom-color:var(--accent)}}
+.quote{position:relative;text-align:center;padding:50px 24px;border-radius:24px;background:linear-gradient(135deg,rgba(255,111,181,.12),rgba(124,108,255,.12));border:1px solid var(--line);overflow:hidden}
+.quote.mark:before{content:"\201C";position:absolute;top:-30px;left:24px;font:italic 10rem/1 'Playfair Display',serif;color:rgba(255,111,181,.18)}
+.quote blockquote{font:italic 500 clamp(1.25rem,2.6vw,1.8rem)/1.5 'Playfair Display',serif;max-width:760px;margin:0 auto 14px;min-height:3em;transition:opacity .5s}
+.quote cite{color:var(--accent);font-style:normal;font-size:.9rem;transition:opacity .5s}
+.qdots{display:flex;justify-content:center;gap:8px;margin-top:20px}
+.qdots button{width:9px;height:9px;border-radius:50%;border:0;background:var(--line);cursor:pointer;transition:.3s}
+.qdots button.on{background:var(--accent);width:24px;border-radius:5px}
+.hobbies{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+.hobby{perspective:800px;height:180px;cursor:pointer;background:none;border:0;font:inherit;color:inherit;text-align:center}
+.hobby .inner{position:relative;width:100%;height:100%;transition:transform .6s;transform-style:preserve-3d}
+.hobby:hover .inner,.hobby.flip .inner{transform:rotateY(180deg)}
+.hobby .face{position:absolute;inset:0;border-radius:18px;border:1px solid var(--line);backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px}
+.hobby .front{background:var(--card)}
+.hobby .front svg{width:52px;height:52px;stroke:var(--accent);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.hobby:hover .front svg{transform:scale(1.1) rotate(-6deg)}
+.hobby .front b{font-size:1rem}
+.hobby .back{background:linear-gradient(135deg,var(--accent),var(--accent2));transform:rotateY(180deg);font-size:.88rem;line-height:1.5;color:#fff}
 footer{text-align:center;color:var(--muted);margin-top:80px;font-size:.88rem}
-footer .links{display:flex;justify-content:center;gap:18px;margin-bottom:10px;flex-wrap:wrap}
-
-/* CHATBOT */
-.chat-fab{position:fixed;right:20px;bottom:20px;z-index:20;width:64px;height:64px;border-radius:50%;border:0;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 10px 30px rgba(255,111,181,.45);display:grid;place-items:center;animation:pulse 2.4s infinite}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+.chat-fab{position:fixed;right:20px;bottom:20px;z-index:20;width:64px;height:64px;border-radius:50%;border:0;cursor:pointer;background:linear-gradient(135deg,var(--accent),var(--accent2));display:grid;place-items:center;animation:pulse 2.4s infinite;padding:0}
+.chat-fab img{width:58px;height:58px;border-radius:50%;border:2px solid #fff}
+.fab-tip{position:fixed;right:92px;bottom:34px;z-index:20;background:#fff;color:#2a2350;font-size:.85rem;font-weight:600;padding:8px 14px;border-radius:14px 14px 4px 14px;box-shadow:0 8px 24px rgba(0,0,0,.35);animation:pop2 3s infinite;transition:opacity .3s}
+.fab-tip.hide{opacity:0;pointer-events:none}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,111,181,.5)}50%{box-shadow:0 0 0 14px rgba(255,111,181,0)}}
-.chat-fab img{width:58px;height:58px;border:2px solid #fff}
 .chat{position:fixed;right:20px;bottom:96px;z-index:20;width:min(380px,calc(100vw - 32px));height:min(560px,calc(100vh - 130px));background:#17133a;border:1px solid var(--line);border-radius:22px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.5);transform:translateY(20px) scale(.96);opacity:0;pointer-events:none;transition:.25s}
 .chat.open{transform:none;opacity:1;pointer-events:auto}
 .chat-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:linear-gradient(135deg,var(--accent),var(--accent2))}
-.chat-head .av{width:40px;height:40px;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden}
+.chat-head .av img{width:40px;height:40px;border-radius:50%;display:block}
 .chat-head b{display:block}
 .chat-head small{opacity:.9;font-size:.78rem}
 .chat-head button{margin-left:auto;background:none;border:0;color:#fff;font-size:1.4rem;cursor:pointer}
 .msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}
-.msg{max-width:85%;padding:10px 14px;border-radius:16px;font-size:.9rem;line-height:1.5;animation:pop .25s ease}
-@keyframes pop{from{opacity:0;transform:translateY(6px)}}
+.msg{max-width:85%;padding:10px 14px;border-radius:16px;font-size:.9rem;line-height:1.5;animation:fade .25s ease}
 .msg.bot{background:rgba(255,255,255,.08);border-bottom-left-radius:4px;align-self:flex-start}
 .msg.me{background:linear-gradient(135deg,var(--accent2),var(--accent));border-bottom-right-radius:4px;align-self:flex-end}
 .msg a{color:#ffd1ea;text-decoration:underline}
@@ -118,229 +142,364 @@ footer .links{display:flex;justify-content:center;gap:18px;margin-bottom:10px;fl
 .chat input{flex:1;background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:999px;padding:10px 14px;color:var(--text);font:inherit;font-size:.9rem;outline:none}
 .chat input:focus{border-color:var(--accent2)}
 .chat form button{border:0;border-radius:50%;width:42px;height:42px;cursor:pointer;background:var(--accent);color:#fff;font-size:1.1rem}
-
 @media (max-width:820px){
-  .hero{grid-template-columns:1fr;text-align:center;min-height:auto;padding-top:10px}
+  .hero{grid-template-columns:1fr;text-align:center;min-height:auto;padding-top:20px}
   .bubble{text-align:left}
   .bubble:before{left:50%;top:-14px;border:14px solid transparent;border-bottom-color:#fff;border-top:0;transform:translateX(-50%)}
   .bubble-controls{justify-content:center}
+  .fab-tip{display:none}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
+<div class="progress" id="progress"></div>
 <div class="stars" id="stars"></div>
-<main>
 
-<!-- HERO -->
+<nav><div class="in">
+  <a class="logo" href="#top">Rouba <b>Souidi</b></a>
+  <div class="links">
+    <a href="#experience"><span class="fr">Expérience</span><span class="en">Experience</span></a>
+    <a href="#projets"><span class="fr">Projets</span><span class="en">Projects</span></a>
+    <a href="#competences"><span class="fr">Compétences</span><span class="en">Skills</span></a>
+    <a href="#associatif"><span class="fr">Engagement</span><span class="en">Leadership</span></a>
+    <a href="#hobbies"><span class="fr">Passions</span><span class="en">Hobbies</span></a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="lang" role="group" aria-label="Langue / Language"><button data-l="fr">FR</button><button data-l="en">EN</button></div>
+</div></nav>
+
+<main id="top">
 <div class="hero">
   <div class="stage">
     <div class="portrait" id="avatar">
       <div class="hello" id="hello">Hello !</div>
-      <div class="frame" id="frame"><img src="rouba.jpg" alt="Rouba Souidi, illustration"></div>
-      
+      <div class="frame" id="frame"><img src="rouba.jpg" alt="Rouba Souidi"></div>
       <span class="sp s1">✦</span><span class="sp s2">✦</span><span class="sp s3">✦</span>
+      <div class="hint"><span class="fr">Clique sur moi pour discuter</span><span class="en">Click me to chat</span></div>
     </div>
   </div>
-
   <div>
-    <div class="tag-open">Disponible immédiatement</div>
-    <h1>Salut, moi c'est <span>Rouba</span></h1>
-    <p class="role">Ingénieure en Intelligence Artificielle & Business Intelligence · Tunis</p>
+    <div class="tag-open"><span class="fr">Disponible immédiatement</span><span class="en">Available now</span></div>
+    <h1><span class="fr">Salut, moi c'est</span><span class="en">Hi, I'm</span> <span class="grad">Rouba</span></h1>
+    <p class="role"><span class="fr">Ingénieure en Intelligence Artificielle & Business Intelligence · Tunis</span><span class="en">Artificial Intelligence & Business Intelligence Engineer · Tunis</span></p>
+    <p class="typed"><span id="typed"></span><span class="c"></span></p>
     <div class="bubble"><span id="say"></span><span class="cursor"></span></div>
     <div class="bubble-controls">
-      <button class="btn" id="next">Suivant →</button>
-      <button class="btn ghost" id="openChat2">Discuter avec Rouba</button>
+      <button class="btn" id="next"><span class="fr">Suivant →</span><span class="en">Next →</span></button>
+      <button class="btn ghost" id="openChat2"><span class="fr">Discuter avec Rouba</span><span class="en">Chat with Rouba</span></button>
+      <div class="dots" id="dots"></div>
     </div>
   </div>
 </div>
 
-<div class="stats">
-  <div class="stat"><b>23</b><span>fonctionnalités en production</span></div>
-  <div class="stat"><b>32</b><span>tests automatisés</span></div>
-  <div class="stat"><b>4</b><span>langues parlées</span></div>
-  <div class="stat"><b>6</b><span>certifications</span></div>
+<div class="stats reveal">
+  <div class="stat"><b data-count="23">0</b><span class="fr">fonctionnalités en production</span><span class="en">features in production</span></div>
+  <div class="stat"><b data-count="32">0</b><span class="fr">tests automatisés</span><span class="en">automated tests</span></div>
+  <div class="stat"><b data-count="4">0</b><span class="fr">langues parlées</span><span class="en">languages spoken</span></div>
+  <div class="stat"><b data-count="6">0</b><span class="fr">certifications</span><span class="en">certifications</span></div>
 </div>
 
-<!-- EXPERIENCE -->
-<section>
-  <h2>Expérience <small>Ce que j'ai construit</small></h2>
-  <div class="grid">
-    <div class="card"><h3>Développeuse IA — Boldys AI</h3><div class="meta">2026 – Présent · Conception de produit IA · Télétravail, Belgique</div>
-      <ul><li>WaaS : plateforme SaaS multi-tenant d'automatisation WhatsApp Business, en production chez plusieurs clients</li>
-      <li>Moteur multi-agents LangGraph / LangChain (GPT-4o) avec RAG et bases de connaissances par client</li>
-      <li>Réservation de créneaux dans la conversation, intégration calendrier via MCP</li>
-      <li>23 fonctionnalités en production : qualification de leads, relances automatisées, intervention humaine, alertes Slack</li>
-      <li>Infrastructure Django, Celery, Redis, PostgreSQL · CI/CD Docker & Coolify</li>
-      <li>32 tests automatisés (Django, Vitest), 100 % de couverture des règles métier critiques</li>
-      <li>Échanges directs avec les clients : recueil des besoins, présentation des fonctionnalités, traitement des retours</li></ul></div>
-    <div class="card"><h3>Ingénieure Logiciel — Advyteam Accretio & INRAE</h3><div class="meta">2025 · Product Owner & QA fonctionnelle · Lyon, France</div>
-      <ul><li>Plateforme collaborative : mise en relation, appels, réservation de salles</li><li>User stories, backlog et priorisation en tant que Product Owner</li><li>Tests fonctionnels et techniques (QA)</li></ul></div>
-    <div class="card"><h3>Ingénieure ERP — Projet WMS/ERP, ISEP Paris & ESPRIT</h3><div class="meta">2024 · Intégration logicielle · Télétravail / présentiel</div>
-      <ul><li>Déploiement et optimisation d'un WMS</li><li>Analyse des processus logistiques, intégration de modules ERP avec Spring Boot et Flutter</li></ul></div>
-    <div class="card"><h3>Ingénieure Cloud ERP — Sekceram</h3><div class="meta">2023 · Administration système & data · Algérie</div>
-      <ul><li>Tableau de bord ERP sécurisé pour l'administration et les clients</li><li>Oracle Cloud ERP : analyse de données et configuration de modules</li></ul></div>
+<section class="reveal">
+  <div class="quote mark">
+    <blockquote id="qtext"></blockquote>
+    <cite id="qauthor"></cite>
+    <div class="qdots" id="qdots"></div>
   </div>
 </section>
 
-<!-- PROJECTS -->
-<section>
-  <h2>Projets <small>Side projects & recherche</small></h2>
-  <div class="grid">
-    <div class="card"><h3>Baebles</h3><div class="meta"><a href="https://baebles.com" target="_blank" rel="noopener">baebles.com</a> · 2026</div><p>Application communautaire gratuite pour les lecteurs de fantasy : salons thématiques par sous-genre, recommandations, listes de lecture et suivi des sorties. Disponible sur iOS & Android.</p></div>
-    <div class="card"><h3>Banti</h3><div class="meta"><a href="https://banti.app" target="_blank" rel="noopener">banti.app</a> · 2026</div><p>Plateforme de mise en relation entre fondateurs, experts indépendants et investisseurs, avec matching intelligent et contenus d'analyse. iOS & Android.</p></div>
-    <div class="card"><h3>IA & marché de l'emploi</h3><div class="meta">NLP · RAG · Sentiment Analysis · 2025</div><p>Analyse de tweets et posts LinkedIn (Sentiment140) pour mesurer l'impact de l'IA sur l'emploi.</p></div>
-    <div class="card"><h3>Classification d'œuvres d'art</h3><div class="meta">Deep Learning · CNN · WikiArt · 2025</div><p>Reconnaissance de styles artistiques par réseaux convolutifs.</p></div>
-    <div class="card"><h3>Smart Healthcare Predictor</h3><div class="meta">Angular · Flask · Power BI · ML/DL · 2025</div><p>Prédiction de la mortalité et de la durée de séjour des patients.</p></div>
+<section id="experience" class="reveal">
+  <h2><span class="fr">Expérience <small>Clique sur un poste</small></span><span class="en">Experience <small>Pick a role</small></span></h2>
+  <div class="tabs">
+    <div class="tablist" id="tablist">
+      <button class="on">Boldys AI<small>2026 –</small></button>
+      <button>Advyteam & INRAE<small>2025</small></button>
+      <button>ISEP Paris & ESPRIT<small>2024</small></button>
+      <button>Sekceram<small>2023</small></button>
+    </div>
+    <div>
+      <div class="card panel on"><h3><span class="fr">Développeuse IA</span><span class="en">AI Developer</span> — Boldys AI</h3>
+        <div class="meta"><span class="fr">2026 – aujourd'hui · Conception de produit IA · Télétravail, Belgique</span><span class="en">2026 – present · AI product design · Remote, Belgium</span></div>
+        <ul class="fr"><li>WaaS : plateforme SaaS multi-tenant d'automatisation conversationnelle sur WhatsApp Business, en production chez plusieurs clients</li>
+          <li>Moteur multi-agents LangGraph / LangChain (GPT-4o) avec RAG et bases de connaissances par client</li>
+          <li>Réservation de créneaux dans la conversation, intégration calendrier via MCP</li>
+          <li>23 fonctionnalités en production : qualification de leads, relances automatisées, intervention humaine, alertes Slack</li>
+          <li>Infrastructure Django, Celery, Redis, PostgreSQL · CI/CD Docker & Coolify</li>
+          <li>32 tests automatisés (Django, Vitest), 100 % de couverture des règles métier critiques</li>
+          <li>Échanges directs avec les clients : recueil des besoins, présentation des fonctionnalités, traitement des retours</li></ul>
+        <ul class="en"><li>WaaS: multi-tenant SaaS platform for conversational automation on WhatsApp Business, in production with several clients</li>
+          <li>Multi-agent AI engine with LangGraph / LangChain (GPT-4o), RAG and per-client knowledge bases</li>
+          <li>In-conversation appointment booking with calendar integration through MCP</li>
+          <li>23 features in production: lead qualification, automated follow-ups, human handover, Slack alerts</li>
+          <li>Django, Celery, Redis, PostgreSQL backend · CI/CD with Docker & Coolify</li>
+          <li>32 automated tests (Django, Vitest), 100% coverage of critical business rules</li>
+          <li>Direct client work: gathering needs, demoing delivered features, handling feedback</li></ul></div>
+      <div class="card panel"><h3><span class="fr">Ingénieure Logiciel</span><span class="en">Software Engineer</span> — Advyteam Accretio & INRAE</h3>
+        <div class="meta"><span class="fr">2025 · Product Owner & QA fonctionnelle · Lyon, France</span><span class="en">2025 · Product Owner & functional QA · Lyon, France</span></div>
+        <ul class="fr"><li>Plateforme collaborative : mise en relation, gestion d'appels, réservation de salles, invités externes</li><li>User stories, backlog et priorisation en tant que Product Owner</li><li>Tests fonctionnels et techniques (QA)</li></ul>
+        <ul class="en"><li>Collaborative platform: networking, call management, room booking, external guests</li><li>User stories, backlog and prioritisation as Product Owner</li><li>Functional and technical testing (QA)</li></ul></div>
+      <div class="card panel"><h3><span class="fr">Ingénieure ERP — Projet WMS/ERP</span><span class="en">ERP Engineer — WMS/ERP project</span>, ISEP Paris & ESPRIT</h3>
+        <div class="meta"><span class="fr">2024 · Intégration logicielle · Télétravail / présentiel</span><span class="en">2024 · Software integration · Remote / on-site</span></div>
+        <ul class="fr"><li>Déploiement et optimisation d'un système de gestion d'entrepôt (WMS)</li><li>Analyse des processus logistiques, intégration de modules ERP avec Spring Boot et Flutter</li></ul>
+        <ul class="en"><li>Deployed and optimised a warehouse management system (WMS)</li><li>Logistics process analysis, ERP module integration with Spring Boot and Flutter</li></ul></div>
+      <div class="card panel"><h3><span class="fr">Ingénieure Cloud ERP</span><span class="en">Cloud ERP Engineer</span> — Sekceram</h3>
+        <div class="meta"><span class="fr">2023 · Administration système & data · Algérie</span><span class="en">2023 · System administration & data · Algeria</span></div>
+        <ul class="fr"><li>Tableau de bord ERP sécurisé pour l'administration et les clients</li><li>Oracle Cloud ERP : analyse de données et configuration de modules</li></ul>
+        <ul class="en"><li>Secure ERP dashboard for administrators and clients</li><li>Oracle Cloud ERP: data analysis and module configuration</li></ul></div>
+    </div>
   </div>
 </section>
 
-<!-- SKILLS -->
-<section>
-  <h2>Compétences</h2>
+<section id="projets" class="reveal">
+  <h2><span class="fr">Projets</span><span class="en">Projects</span></h2>
+  <div class="grid">
+    <div class="card"><h3>Baebles</h3><div class="meta"><a href="https://baebles.com" target="_blank" rel="noopener">baebles.com</a> · 2026</div><p class="fr">Application communautaire gratuite pour les lecteurs de fantasy : salons thématiques par sous-genre, recommandations, listes de lecture et suivi des sorties. iOS & Android.</p><p class="en">Free community app for fantasy readers: themed rooms by subgenre, recommendations, reading lists and release tracking. iOS & Android.</p></div>
+    <div class="card"><h3>Banti</h3><div class="meta"><a href="https://banti.app" target="_blank" rel="noopener">banti.app</a> · 2026</div><p class="fr">Plateforme de mise en relation entre fondateurs, experts indépendants et investisseurs, avec matching intelligent et contenus d'analyse. iOS & Android.</p><p class="en">Matching platform connecting founders, independent experts and investors, with smart matching and analysis content. iOS & Android.</p></div>
+    <div class="card"><h3><span class="fr">IA & marché de l'emploi</span><span class="en">AI & the job market</span></h3><div class="meta">NLP · RAG · Sentiment Analysis · 2025</div><p class="fr">Analyse de tweets et posts LinkedIn (Sentiment140) pour mesurer l'impact de l'IA sur l'emploi, avec contextualisation via RAG.</p><p class="en">Analysis of tweets and LinkedIn posts (Sentiment140) to measure AI's impact on jobs, with RAG-based context.</p></div>
+    <div class="card"><h3><span class="fr">Classification d'œuvres d'art</span><span class="en">Artwork classification</span></h3><div class="meta">Deep Learning · CNN · WikiArt · 2025</div><p class="fr">Reconnaissance de styles artistiques par réseaux de neurones convolutifs.</p><p class="en">Recognising art styles with convolutional neural networks.</p></div>
+    <div class="card"><h3>Smart Healthcare Predictor</h3><div class="meta">Angular · Flask · Power BI · ML/DL · 2025</div><p class="fr">Application full-stack prédictive : mortalité et durée de séjour des patients.</p><p class="en">Full-stack predictive app: patient mortality and length of stay.</p></div>
+  </div>
+</section>
+
+<section id="competences" class="reveal">
+  <h2><span class="fr">Compétences</span><span class="en">Skills</span></h2>
   <div class="chips">
-    <span class="chip">LangGraph</span><span class="chip">LangChain</span><span class="chip">RAG</span><span class="chip">GPT-4o</span><span class="chip">MCP</span><span class="chip">NLP</span><span class="chip">Deep Learning</span>
-    <span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">Java</span><span class="chip">Django</span><span class="chip">Spring Boot</span><span class="chip">Node.js</span>
+    <span class="chip">LangGraph</span><span class="chip">LangChain</span><span class="chip">RAG</span><span class="chip">GPT-4o</span><span class="chip">MCP</span><span class="chip">NLP</span><span class="chip">Machine Learning</span><span class="chip">Deep Learning</span>
+    <span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">Java</span><span class="chip">SQL</span><span class="chip">Django</span><span class="chip">Spring Boot</span><span class="chip">Node.js</span><span class="chip">Celery</span>
     <span class="chip">React</span><span class="chip">Next.js</span><span class="chip">Angular</span><span class="chip">Flutter</span><span class="chip">FlutterFlow</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span><span class="chip">Supabase</span>
-    <span class="chip">Docker</span><span class="chip">Azure</span><span class="chip">AWS</span><span class="chip">CI/CD</span><span class="chip">Power BI</span><span class="chip">Dynamics 365</span><span class="chip">Odoo</span><span class="chip">SAP</span>
+    <span class="chip">Docker</span><span class="chip">Azure</span><span class="chip">AWS</span><span class="chip">CI/CD</span><span class="chip">Redis</span><span class="chip">Power BI</span><span class="chip">Dynamics 365</span><span class="chip">Oracle Cloud ERP</span><span class="chip">SAP</span><span class="chip">Odoo</span>
+    <span class="chip">Scrum</span><span class="chip">Kanban</span><span class="chip">CRISP-DM</span>
   </div>
-</section>
-
-<!-- CERTIFICATIONS -->
-<section>
-  <h2>Certifications</h2>
+  <h2 style="margin-top:40px;font-size:1.25rem">Certifications</h2>
   <div class="chips">
     <span class="chip">NVIDIA Deep Learning</span><span class="chip">NVIDIA Generative AI Explained</span><span class="chip">Microsoft Dynamics 365 Fundamentals</span>
     <span class="chip">AWS Cloud Foundations</span><span class="chip">Hashgraph Developer</span><span class="chip">Mastering Maven</span>
   </div>
 </section>
 
-<!-- FORMATION & LANGUES -->
-<section>
-  <h2>Formation & langues</h2>
+<section class="reveal">
+  <h2><span class="fr">Formation & langues</span><span class="en">Education & languages</span></h2>
   <div class="grid">
-    <div class="card"><h3>ESPRIT — École d'Ingénieurs</h3><div class="meta">2023 – 2026 · Tunisie</div><p>Diplôme National d'Ingénieur, spécialité Intelligence Artificielle & Business Intelligence.</p></div>
-    <div class="card"><h3>FSM — Faculté des Sciences de Monastir</h3><div class="meta">2020 – 2023</div><p>Cycle préparatoire aux études d'ingénieur, Mathématiques-Physique.</p></div>
-    <div class="card"><h3>Baccalauréat — Sciences expérimentales</h3><div class="meta">2019 – 2020 · Soliman</div><p>Lycée Route de la Plage.</p></div>
-    <div class="card"><h3>Langues</h3><div class="meta">4 langues</div><p>Arabe (langue maternelle) · Français (courant) · Anglais (courant) · Allemand (A2)</p></div>
+    <div class="card"><h3>ESPRIT — <span class="fr">École d'Ingénieurs</span><span class="en">School of Engineering</span></h3><div class="meta">2023 – 2026 · <span class="fr">Tunisie</span><span class="en">Tunisia</span></div><p class="fr">Diplôme National d'Ingénieur, spécialité Intelligence Artificielle & Business Intelligence.</p><p class="en">National Engineering Degree, Artificial Intelligence & Business Intelligence.</p></div>
+    <div class="card"><h3>FSM — <span class="fr">Faculté des Sciences de Monastir</span><span class="en">Faculty of Sciences of Monastir</span></h3><div class="meta">2020 – 2023</div><p class="fr">Cycle préparatoire aux études d'ingénieur, Mathématiques-Physique.</p><p class="en">Preparatory engineering programme, Mathematics-Physics.</p></div>
+    <div class="card"><h3><span class="fr">Baccalauréat — Sciences expérimentales</span><span class="en">Baccalaureate — Experimental Sciences</span></h3><div class="meta">2019 – 2020 · Soliman</div><p>Lycée Route de la Plage</p></div>
+    <div class="card"><h3><span class="fr">Langues</span><span class="en">Languages</span></h3><div class="meta">4</div><p class="fr">Arabe (maternelle) · Français (courant) · Anglais (courant) · Allemand (A2)</p><p class="en">Arabic (native) · French (fluent) · English (fluent) · German (A2)</p></div>
   </div>
 </section>
 
-<!-- VIE ASSOCIATIVE -->
-<section>
-  <h2>Vie associative & leadership</h2>
+<section id="associatif" class="reveal">
+  <h2><span class="fr">Vie associative & leadership</span><span class="en">Volunteering & leadership</span></h2>
   <div class="grid">
-    <div class="card"><h3>IEEE Women in Engineering — Affinity Group ESPRIT</h3><div class="meta">Advisor · actuellement</div></div>
-    <div class="card"><h3>IEEE ESPRIT Student Branch</h3><div class="meta">Mentor · auparavant</div></div>
-    <div class="card"><h3>IEEE ESPRIT Student Branch</h3><div class="meta">Vice-Présidente</div></div>
-    <div class="card"><h3>IEEE Computer Society — chapitre ESPRIT</h3><div class="meta">Secrétaire Générale</div></div>
-    <div class="card"><h3>WIE ACT 3 Congress</h3><div class="meta">Vice-Présidente</div></div>
-    <div class="card"><h3>IEEE ESPRIT, TAPSES, clubs CTS</h3><div class="meta">Responsable Ressources Humaines</div></div>
-    <div class="card"><h3>Hult Prize ESPRIT</h3><div class="meta">Coordinatrice logistique</div></div>
-    <div class="card"><h3>IEEE Region 8 SYP Congress, Grenoble</h3><div class="meta">Participante</div></div>
-    <div class="card"><h3>Enactus ENIM, Spark Club BIAT, British Council Debate Club</h3><div class="meta">Membre active</div></div>
+    <div class="card"><h3>IEEE Women in Engineering — Affinity Group ESPRIT</h3><div class="meta">Advisor · <span class="fr">actuellement</span><span class="en">current</span></div></div>
+    <div class="card"><h3>IEEE ESPRIT Student Branch</h3><div class="meta">Mentor · <span class="fr">auparavant</span><span class="en">past</span></div></div>
+    <div class="card"><h3>IEEE ESPRIT Student Branch</h3><div class="meta"><span class="fr">Vice-Présidente</span><span class="en">Vice-President</span></div></div>
+    <div class="card"><h3>IEEE Computer Society — <span class="fr">chapitre ESPRIT</span><span class="en">ESPRIT chapter</span></h3><div class="meta"><span class="fr">Secrétaire Générale</span><span class="en">General Secretary</span></div></div>
+    <div class="card"><h3>WIE ACT 3 Congress</h3><div class="meta"><span class="fr">Vice-Présidente</span><span class="en">Vice-President</span></div></div>
+    <div class="card"><h3>IEEE ESPRIT, TAPSES, CTS</h3><div class="meta"><span class="fr">Responsable Ressources Humaines</span><span class="en">Human Resources Lead</span></div></div>
+    <div class="card"><h3>Hult Prize ESPRIT</h3><div class="meta"><span class="fr">Coordinatrice logistique</span><span class="en">Logistics Coordinator</span></div></div>
+    <div class="card"><h3>IEEE Region 8 SYP Congress, Grenoble</h3><div class="meta"><span class="fr">Participante</span><span class="en">Participant</span></div></div>
+    <div class="card"><h3>Enactus ENIM, Spark Club BIAT, British Council Debate Club</h3><div class="meta"><span class="fr">Membre active</span><span class="en">Active member</span></div></div>
   </div>
 </section>
 
-<footer>
-  <div class="links">
-    <a href="mailto:roubasouidi.pro@gmail.com">Email</a>
-    <a href="https://linkedin.com/in/rouba-souidi" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://github.com/Rouba21" target="_blank" rel="noopener">GitHub</a>
+<section id="hobbies" class="reveal">
+  <h2><span class="fr">En dehors du code <small>Survole ou touche une carte</small></span><span class="en">Beyond the code <small>Hover or tap a card</small></span></h2>
+  <div class="hobbies">
+    <button class="hobby"><div class="inner"><div class="face front">
+      <svg viewBox="0 0 24 24"><path d="M12 2v5"/><path d="M10.5 2.5h3"/><path d="M9 7.5c-2 0-3 1.6-2.2 3.2C5.8 12 5.6 14 7 15.8c1.8 2.4 8.2 2.4 10 0 1.4-1.8 1.2-3.8.2-5.1C18 9.1 17 7.5 15 7.5z"/><path d="M12 10v8"/><path d="M10 12.5h4"/><path d="M4 21 19 6"/></svg>
+      <b><span class="fr">Violon</span><span class="en">Violin</span></b></div>
+      <div class="face back"><span class="fr">La musique demande la même chose que le code : patience, précision et beaucoup de pratique.</span><span class="en">Music asks for the same things as code: patience, precision and a lot of practice.</span></div></div></button>
+    <button class="hobby"><div class="inner"><div class="face front">
+      <svg viewBox="0 0 24 24"><circle cx="17" cy="6" r="2"/><path d="M5 13l4-4 4 2 3-3"/><path d="M2 18c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/><path d="M2 22c2-1.6 4-1.6 6 0s4 1.6 6 0 4-1.6 6 0"/></svg>
+      <b><span class="fr">Natation</span><span class="en">Swimming</span></b></div>
+      <div class="face back"><span class="fr">Ma façon de faire le vide et de recharger les batteries.</span><span class="en">My way to clear my head and recharge.</span></div></div></button>
+    <button class="hobby"><div class="inner"><div class="face front">
+      <svg viewBox="0 0 24 24"><circle cx="14" cy="4" r="2"/><path d="M7 12l3-3 4 1 2 3h3"/><path d="M10 9l-1 6-3 6"/><path d="M9 15l4 2v5"/></svg>
+      <b>Jogging</b></div>
+      <div class="face back"><span class="fr">Un kilomètre après l'autre : la régularité finit toujours par payer.</span><span class="en">One kilometre at a time: consistency always pays off.</span></div></div></button>
+    <button class="hobby"><div class="inner"><div class="face front">
+      <svg viewBox="0 0 24 24"><path d="M2 5h6a4 4 0 0 1 4 4v11a3 3 0 0 0-3-3H2z"/><path d="M22 5h-6a4 4 0 0 0-4 4v11a3 3 0 0 1 3-3h7z"/></svg>
+      <b><span class="fr">Lecture</span><span class="en">Reading</span></b></div>
+      <div class="face back"><span class="fr">Les livres ouvrent des mondes, et inspirent parfois des applis.</span><span class="en">Books open new worlds, and sometimes inspire apps.</span></div></div></button>
+    <button class="hobby"><div class="inner"><div class="face front">
+      <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 8.5l1 2.2 2.2 1-2.2 1-1 2.2-1-2.2-2.2-1 2.2-1z"/></svg>
+      <b>Anime</b></div>
+      <div class="face back"><span class="fr">Des histoires pleines d'imagination, de courage et de persévérance.</span><span class="en">Stories full of imagination, courage and perseverance.</span></div></div></button>
+    <button class="hobby"><div class="inner"><div class="face front">
+      <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 2l4 4 4-4"/><path d="M10 11l5 3-5 3z"/></svg>
+      <b><span class="fr">Séries</span><span class="en">TV series</span></b></div>
+      <div class="face back"><span class="fr">Toujours partante pour un épisode de plus.</span><span class="en">Always up for one more episode.</span></div></div></button>
   </div>
-  © 2026 Rouba Souidi · Tunis · Disponible immédiatement
-</footer>
+</section>
+
+<section id="contact" class="reveal">
+  <div class="quote">
+    <h2 style="margin-bottom:10px"><span class="fr">Travaillons ensemble</span><span class="en">Let's work together</span></h2>
+    <p style="color:var(--muted);margin-bottom:22px"><span class="fr">Je cherche un poste à temps plein d'ingénieure IA / Data, disponible immédiatement.</span><span class="en">I'm looking for a full-time AI / Data engineering role, available immediately.</span></p>
+    <div class="bubble-controls" style="justify-content:center">
+      <a class="btn" href="mailto:roubasouidi.pro@gmail.com"><span class="fr">M'écrire</span><span class="en">Email me</span></a>
+      <a class="btn ghost" href="https://linkedin.com/in/rouba-souidi" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/Rouba21" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Rouba Souidi · Tunis</footer>
 </main>
 
-<!-- CHATBOT -->
-<button class="chat-fab" id="fab" aria-label="Ouvrir le chat avec Rouba">
-  <img src="rouba-face.jpg" alt="Rouba" width="58" height="58" style="border-radius:50%;display:block">
-</button>
-<div class="chat" id="chat" role="dialog" aria-label="Chat avec Rouba">
+<div class="fab-tip" id="fabTip"><span class="fr">Une question ? Demande-moi</span><span class="en">Got a question? Ask me</span></div>
+<button class="chat-fab" id="fab" aria-label="Chat"><img src="rouba-face.jpg" alt="Rouba"></button>
+<div class="chat" id="chat" role="dialog" aria-label="Chat">
   <div class="chat-head">
-    <div class="av"><img src="rouba-face.jpg" alt="Rouba" width="40" height="40" style="border-radius:50%;display:block"></div>
-    <div><b>Rouba</b><small>Assistante virtuelle · en ligne</small></div>
-    <button id="close" aria-label="Fermer">×</button>
+    <div class="av"><img src="rouba-face.jpg" alt="Rouba"></div>
+    <div><b>Rouba</b><small><span class="fr">Assistante virtuelle · en ligne</span><span class="en">Virtual assistant · online</span></small></div>
+    <button id="close" aria-label="Fermer / Close">×</button>
   </div>
   <div class="msgs" id="msgs"></div>
   <div class="quick" id="quick"></div>
-  <form id="form"><input id="input" placeholder="Pose-moi une question…" autocomplete="off"><button aria-label="Envoyer">➤</button></form>
+  <form id="form"><input id="input" autocomplete="off"><button aria-label="Envoyer / Send">➤</button></form>
 </div>
 
 <script>
-/* ---------- étoiles ---------- */
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const params=new URLSearchParams(location.search);
+let LANG=params.get('lang')||store.get('lang')||((navigator.language||'fr').startsWith('fr')?'fr':'en');
+if(LANG!=='en')LANG='fr';
+const T={
+ fr:{
+  lines:["Hello et bienvenue sur mon profil ! Je suis Rouba Souidi, ingénieure diplômée en Intelligence Artificielle & Business Intelligence (ESPRIT, 2026).",
+   "Chez Boldys AI, je conçois des agents conversationnels IA (LangGraph, RAG, GPT-4o) et une plateforme SaaS WhatsApp déployée chez plusieurs clients.",
+   "J'aime conjuguer développement logiciel, IA générative et création de valeur métier, du pipeline de données jusqu'à la production.",
+   "Côté projets : Baebles, une communauté pour les lecteurs de fantasy, et Banti, qui connecte fondateurs, experts et investisseurs.",
+   "En dehors du code : violon, natation, jogging, lecture, anime et séries.",
+   "Je cherche un poste à temps plein d'ingénieure IA / Data, et je suis disponible immédiatement. Une question ? Clique sur moi !"],
+  hellos:["Hello !","Bienvenue !","Vous êtes le bienvenu","Welcome to my profile"],
+  typed:["Agents IA conversationnels","Pipelines de données","Plateformes SaaS en production","Business Intelligence"],
+  typedPre:"Je construis : ",
+  quick:['Qui es-tu ?','Expérience','Projets','Compétences IA','Vie associative','Passions','Disponibilité','Contact'],
+  hi:"Coucou ! Je suis <b>Rouba</b>, l'assistante virtuelle de Rouba Souidi. Pose-moi une question sur son profil (tu peux aussi écrire en anglais).",
+  ph:"Pose-moi une question…",
+  nf:"Je n'ai pas cette info. Essaie : expérience, projets, compétences, formation, vie associative, passions, disponibilité ou contact."
+ },
+ en:{
+  lines:["Hello and welcome to my profile! I'm Rouba Souidi, an engineer with a degree in Artificial Intelligence & Business Intelligence (ESPRIT, 2026).",
+   "At Boldys AI, I build conversational AI agents (LangGraph, RAG, GPT-4o) and a WhatsApp SaaS platform running in production for several clients.",
+   "I love combining software engineering, generative AI and real business value, from data pipelines all the way to production.",
+   "Side projects: Baebles, a community for fantasy readers, and Banti, which connects founders, experts and investors.",
+   "Away from the keyboard: violin, swimming, jogging, reading, anime and TV series.",
+   "I'm looking for a full-time AI / Data engineering role and I'm available now. Got a question? Click on me!"],
+  hellos:["Hello!","Welcome to my profile","Bienvenue !","Nice to meet you"],
+  typed:["Conversational AI agents","Data pipelines","SaaS platforms in production","Business Intelligence"],
+  typedPre:"I build: ",
+  quick:['Who are you?','Experience','Projects','AI skills','Leadership','Hobbies','Availability','Contact'],
+  hi:"Hi! I'm <b>Rouba</b>, Rouba Souidi's virtual assistant. Ask me anything about her profile (French works too).",
+  ph:"Ask me a question…",
+  nf:"I don't have that one. Try: experience, projects, skills, education, leadership, hobbies, availability or contact."
+ }
+};
+const QUOTES=[
+ {fr:"La meilleure façon de prédire l'avenir, c'est de l'inventer.",en:"The best way to predict the future is to invent it.",a:"Alan Kay"},
+ {fr:"La phrase la plus dangereuse de la langue est : « On a toujours fait comme ça. »",en:"The most dangerous phrase in the language is: “We've always done it this way.”",a:"Grace Hopper"},
+ {fr:"Rien dans la vie n'est à craindre, tout est à comprendre.",en:"Nothing in life is to be feared, it is only to be understood.",a:"Marie Curie"},
+ {fr:"Le succès, c'est la somme de petits efforts, répétés jour après jour.",en:"Success is the sum of small efforts, repeated day in and day out.",a:"Robert Collier"}
+];
+
 const stars=document.getElementById('stars');
 for(let i=0;i<70;i++){const s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=Math.random()*3+'s';stars.appendChild(s)}
+const prog=document.getElementById('progress');
+addEventListener('scroll',()=>{const h=document.documentElement;prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
 
-/* ---------- présentation du personnage ---------- */
-const lines=[
- "Hello & welcome to my profile ! Bienvenue, vous êtes le bienvenu ici. Je suis Rouba Souidi, ingénieure diplômée en Intelligence Artificielle & Business Intelligence (ESPRIT, 2026).",
- "Chez Boldys AI, je conçois des agents conversationnels IA (LangGraph, RAG, GPT-4o) et une plateforme SaaS WhatsApp déployée chez plusieurs clients.",
- "J'aime conjuguer développement logiciel, IA générative et création de valeur métier, du pipeline de données jusqu'à la production.",
- "Côté projets : Baebles, une communauté pour les lecteurs de fantasy, et Banti, qui connecte fondateurs, experts et investisseurs.",
- "Je cherche un poste à temps plein d'ingénieure IA / Data, et je suis disponible immédiatement.",
- "Une question ? Clique sur « Discuter avec Rouba » : mon assistante te répond sur mon parcours !"
-];
-let li=0,timer;const say=document.getElementById('say'),avatar=document.getElementById('avatar');
+let li=0,timer;const say=document.getElementById('say'),avatar=document.getElementById('avatar'),dots=document.getElementById('dots');
+function renderDots(){dots.innerHTML=T[LANG].lines.map((_,i)=>`<i class="${i===li?'on':''}"></i>`).join('')}
 function speak(t){clearInterval(timer);say.textContent='';let i=0;avatar.classList.add('talking');
- timer=setInterval(()=>{say.textContent+=t[i++];if(i>=t.length){clearInterval(timer);avatar.classList.remove('talking')}},28)}
-document.getElementById('next').onclick=()=>{li=(li+1)%lines.length;speak(lines[li])};
-setTimeout(()=>speak(lines[0]),500);
+ timer=setInterval(()=>{say.textContent+=t[i++];if(i>=t.length){clearInterval(timer);avatar.classList.remove('talking')}},24)}
+document.getElementById('next').onclick=()=>{li=(li+1)%T[LANG].lines.length;speak(T[LANG].lines[li]);renderDots()};
 
+const typedEl=document.getElementById('typed');let ti=0,tc=0,del=false;
+function typeLoop(){const arr=T[LANG].typed,w=arr[ti%arr.length];
+ tc=Math.max(0,Math.min(w.length,tc+(del?-1:1)));typedEl.innerHTML=T[LANG].typedPre+'<b>'+w.slice(0,tc)+'</b>';
+ let d=del?35:70;if(!del&&tc===w.length){del=true;d=1600}else if(del&&tc===0){del=false;ti++;d=300}
+ setTimeout(typeLoop,d)}
+typeLoop();
 
-/* bulle bonjour animée + inclinaison 3D à la souris */
-const hellos=["Hello !","Welcome to my profile","Bienvenue !","Vous êtes le bienvenu"];let hi=0;const hello=document.getElementById('hello');
-setInterval(()=>{hi=(hi+1)%hellos.length;hello.textContent=hellos[hi];hello.classList.remove('swap');void hello.offsetWidth;hello.classList.add('swap')},2600);
+let hi=0;const hello=document.getElementById('hello');
+setInterval(()=>{hi=(hi+1)%T[LANG].hellos.length;hello.textContent=T[LANG].hellos[hi];hello.classList.remove('swap');void hello.offsetWidth;hello.classList.add('swap')},2600);
 const frame=document.getElementById('frame');
-document.addEventListener('mousemove',e=>{const r=frame.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)/window.innerWidth,y=(e.clientY-r.top-r.height/2)/window.innerHeight;frame.style.transform=`rotateY(${x*18}deg) rotateX(${-y*14}deg)`});
+document.addEventListener('mousemove',e=>{const r=frame.getBoundingClientRect(),x=(e.clientX-r.left-r.width/2)/innerWidth,y=(e.clientY-r.top-r.height/2)/innerHeight;frame.style.transform=`rotateY(${x*18}deg) rotateX(${-y*14}deg)`});
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('mousemove',e=>{const r=c.getBoundingClientRect();c.style.setProperty('--x',e.clientX-r.left+'px');c.style.setProperty('--y',e.clientY-r.top+'px')}));
 
-/* ---------- base de connaissances du chatbot ---------- */
+const qt=document.getElementById('qtext'),qa=document.getElementById('qauthor'),qd=document.getElementById('qdots');let qi=0,qTimer;
+qd.innerHTML=QUOTES.map((_,i)=>`<button aria-label="${i+1}"></button>`).join('');
+function showQuote(i){qi=i;qt.style.opacity=qa.style.opacity=0;setTimeout(()=>{qt.textContent=QUOTES[i][LANG];qa.textContent='— '+QUOTES[i].a;qt.style.opacity=qa.style.opacity=1},350);
+ [...qd.children].forEach((b,j)=>b.classList.toggle('on',j===i));clearInterval(qTimer);qTimer=setInterval(()=>showQuote((qi+1)%QUOTES.length),6500)}
+[...qd.children].forEach((b,i)=>b.onclick=()=>showQuote(i));
+
+const tabs=[...document.querySelectorAll('#tablist button')],panels=[...document.querySelectorAll('.panel')];
+tabs.forEach((b,i)=>b.onclick=()=>{tabs.forEach(x=>x.classList.remove('on'));panels.forEach(x=>x.classList.remove('on'));b.classList.add('on');panels[i].classList.add('on')});
+
+document.querySelectorAll('.hobby').forEach(h=>h.onclick=()=>h.classList.toggle('flip'));
+
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');
+ e.target.querySelectorAll('[data-count]').forEach(n=>{const end=+n.dataset.count;let v=0;const st=setInterval(()=>{v++;n.textContent=v;if(v>=end)clearInterval(st)},Math.max(20,900/end))});
+ io.unobserve(e.target)}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const navLinks=[...document.querySelectorAll('nav .links a')];
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)navLinks.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id))}),{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>so.observe(s));
+
 const KB=[
- {k:['bonjour','salut','hello','hi','hey','coucou','salam'],a:"Salut ! Je suis Rouba, l'assistante de Rouba Souidi. Demande-moi son expérience, ses projets, ses compétences, sa formation ou comment la contacter."},
- {k:['qui','presente','profil','toi','about','resume'],a:"Rouba Souidi est ingénieure diplômée en Intelligence Artificielle & Business Intelligence (ESPRIT, 2026). Elle a une expérience confirmée en agents conversationnels IA (LangGraph, RAG, NLP), en pipelines de données et en plateformes SaaS multi-tenant déployées en production chez de vrais clients."},
- {k:['boldys','actuel','poste','travail','job','waas','whatsapp','maintenant'],a:"Depuis 2026, Rouba est développeuse IA chez <b>Boldys AI</b> (télétravail, Belgique). Elle a conçu <b>WaaS</b>, une plateforme SaaS multi-tenant d'automatisation conversationnelle sur WhatsApp Business : moteur multi-agents LangGraph/LangChain + GPT-4o, RAG et bases de connaissances par client, prise de RDV via MCP, 23 fonctionnalités en production (qualification de leads, relances, intervention humaine, alertes Slack), 32 tests automatisés."},
- {k:['experience','parcours','carriere','entreprise','stage','advyteam','inrae','sekceram','isep','erp','wms'],a:"Son parcours :<br>• <b>Boldys AI</b> (2026–) — Développeuse IA, conception de produit IA<br>• <b>Advyteam Accretio & INRAE</b> (2025, Lyon) — Ingénieure logiciel, Product Owner & QA<br>• <b>ISEP Paris & ESPRIT</b> (2024) — Ingénieure ERP, intégration logicielle, projet WMS (Spring Boot, Flutter)<br>• <b>Sekceram</b> (2023, Algérie) — Ingénieure Cloud ERP, administration système & data (Oracle)"},
- {k:['projet','project','baebles','banti','side','application','app','portfolio'],a:"Ses projets phares :<br>• <b>Baebles</b> (<a href='https://baebles.com' target='_blank'>baebles.com</a>) — application communautaire pour les lecteurs de fantasy (iOS & Android)<br>• <b>Banti</b> (<a href='https://banti.app' target='_blank'>banti.app</a>) — matching entre fondateurs, experts et investisseurs<br>• Étude NLP de l'impact de l'IA sur l'emploi<br>• Classification d'œuvres d'art (CNN)<br>• Smart Healthcare Predictor (Angular, Flask, Power BI)"},
- {k:['ia','ai','intelligence','langgraph','langchain','rag','llm','gpt','agent','nlp','machine','deep','data','mcp'],a:"En IA, Rouba maîtrise LangGraph, LangChain, RAG, NLP, Machine & Deep Learning, Sentiment Analysis, GPT-4o / OpenAI API et MCP (Model Context Protocol). Elle a mis en production un moteur multi-agents chez Boldys AI. Certifiée NVIDIA Deep Learning et Generative AI."},
- {k:['competence','skill','stack','techno','langage','python','java','react','django','angular','flutter','framework','outil'],a:"Sa stack :<br>• <b>Langages</b> : Python, Java, JS/TS, PHP, C/C++, SQL<br>• <b>Backend</b> : Django/DRF, Spring Boot, Symfony, Node.js, Celery<br>• <b>Front & mobile</b> : React, Next.js, Angular, Flutter, FlutterFlow, Tailwind<br>• <b>BDD</b> : PostgreSQL, MySQL, MongoDB, Supabase<br>• <b>DevOps</b> : Docker, Coolify, Azure, AWS, CI/CD, Redis"},
- {k:['bi','business','power','dynamics','sap','odoo','oracle','data','dashboard'],a:"Côté ERP & BI : Power BI (DAX, Power Query), Power Apps, Power Automate, Dynamics 365 FO, Oracle Cloud ERP, SAP et Odoo."},
- {k:['devops','docker','cloud','aws','azure','deploiement','ci'],a:"Rouba déploie avec Docker et Coolify (CI/CD, environnements de recette par Pull Request), et travaille sur Azure et AWS (certifiée AWS Cloud Foundations)."},
- {k:['formation','etude','diplome','ecole','esprit','universite','education','bac','monastir'],a:"Formation :<br>• <b>ESPRIT</b> (2023–2026) — Diplôme d'Ingénieur, IA & Business Intelligence<br>• <b>FSM Monastir</b> (2020–2023) — Prépa Maths-Physique<br>• Bac Sciences expérimentales — Lycée Route de la Plage, Soliman (2020)"},
- {k:['certif','nvidia','certification'],a:"Certifications : NVIDIA Deep Learning, NVIDIA Generative AI Explained, Microsoft Dynamics 365 Fundamentals, AWS Cloud Foundations, Hashgraph Developer, Mastering Maven."},
- {k:['langue','language','anglais','francais','arabe','allemand','english'],a:"Arabe (langue maternelle), Français et Anglais courants, Allemand A2."},
- {k:['ieee','associatif','association','associative','vie','engagement','leadership','benevol','club','hult','enactus','wie','advisor','mentor','women'],a:"Vie associative & leadership :<br>• Advisor (actuellement) — IEEE Women in Engineering Affinity Group, ESPRIT<br>• Mentor (auparavant) — IEEE ESPRIT Student Branch<br>• Vice-Présidente — IEEE ESPRIT Student Branch<br>• Secrétaire Générale — IEEE Computer Society (chapitre ESPRIT)<br>• Vice-Présidente — WIE ACT 3 Congress<br>• Responsable RH — IEEE ESPRIT, TAPSES, clubs CTS<br>• Coordinatrice logistique — Hult Prize ESPRIT<br>• Participante — IEEE Region 8 SYP Congress, Grenoble<br>• Membre active — Enactus ENIM, Spark Club BIAT, British Council Debate Club"},
- {k:['agile','scrum','methode','kanban','product','owner'],a:"Méthodes : Scrum, Kanban, Scrumban, CRISP-DM, Design Science Research. Elle a aussi été Product Owner (backlog, user stories, priorisation)."},
- {k:['dispo','disponible','recrut','embauche','cherche','hire','cdi','temps','offre','opportunit'],a:"Rouba cherche un poste à temps plein d'<b>ingénieure IA / Data</b> et est <b>disponible immédiatement</b>. Tu peux la contacter par <a href='mailto:roubasouidi.pro@gmail.com'>email</a> ou sur <a href='https://linkedin.com/in/rouba-souidi' target='_blank'>LinkedIn</a>"},
- {k:['contact','mail','email','linkedin','joindre','ecrire','reach'],a:"Email : <a href='mailto:roubasouidi.pro@gmail.com'>roubasouidi.pro@gmail.com</a><br>LinkedIn : <a href='https://linkedin.com/in/rouba-souidi' target='_blank'>linkedin.com/in/rouba-souidi</a><br>GitHub : <a href='https://github.com/Rouba21' target='_blank'>github.com/Rouba21</a>"},
- {k:['ou','localisation','ville','tunis','tunisie','pays','habite','remote','teletravail'],a:"Rouba est basée à Tunis et a déjà travaillé à distance avec la Belgique et la France, ainsi qu'en présentiel à Lyon. Elle est à l'aise en équipe internationale."},
- {k:['client','relation','soft','besoin','communication'],a:"Rouba échange directement avec les clients : recueil et reformulation des besoins, présentation des fonctionnalités livrées, suivi et support après livraison, avec des clients en production."},
- {k:['merci','thanks','super','cool','genial','top'],a:"Avec plaisir ! Autre chose que tu veux savoir sur Rouba ?"},
- {k:['test','qualite','qa','couverture'],a:"Rouba a écrit 32 tests automatisés (Django, Vitest) couvrant 100 % des règles métier critiques chez Boldys AI, et a été QA fonctionnelle chez Advyteam Accretio & INRAE."}
+ {k:['bonjour','salut','hello','hi','hey','coucou','salam'],fr:`Salut ! Je suis Rouba, l'assistante de Rouba Souidi. Demande-moi son expérience, ses projets, ses compétences, sa vie associative, ses passions ou comment la contacter.`,en:`Hi! I'm Rouba, Rouba Souidi's assistant. Ask me about her experience, projects, skills, leadership, hobbies or how to reach her.`},
+ {k:['qui','presente','profil','toi','resume','who','yourself','introduce'],fr:`Rouba Souidi est ingénieure diplômée en Intelligence Artificielle & Business Intelligence (ESPRIT, 2026). Elle a une expérience confirmée en agents conversationnels IA (LangGraph, RAG, NLP), en pipelines de données et en plateformes SaaS multi-tenant déployées en production chez de vrais clients.`,en:`Rouba Souidi is an engineer with a degree in Artificial Intelligence & Business Intelligence (ESPRIT, 2026). She has hands-on experience building conversational AI agents (LangGraph, RAG, NLP), data pipelines and multi-tenant SaaS platforms running in production for real clients.`},
+ {k:['boldys','actuel','poste','travail','job','waas','whatsapp','maintenant','current','currently','now','work'],fr:`Depuis 2026, Rouba est développeuse IA chez <b>Boldys AI</b> (télétravail, Belgique). Elle a conçu <b>WaaS</b>, une plateforme SaaS multi-tenant d'automatisation conversationnelle sur WhatsApp Business : moteur multi-agents LangGraph/LangChain + GPT-4o, RAG et bases de connaissances par client, prise de RDV via MCP, 23 fonctionnalités en production, 32 tests automatisés.`,en:`Since 2026, Rouba has been an AI developer at <b>Boldys AI</b> (remote, Belgium). She built <b>WaaS</b>, a multi-tenant SaaS platform for conversational automation on WhatsApp Business: a LangGraph/LangChain multi-agent engine with GPT-4o, RAG and per-client knowledge bases, appointment booking through MCP, 23 features in production and 32 automated tests.`},
+ {k:['experience','parcours','carriere','entreprise','stage','advyteam','inrae','sekceram','isep','erp','wms','career','background','internship'],fr:`Son parcours :<br>• <b>Boldys AI</b> (2026–) — Développeuse IA, conception de produit IA<br>• <b>Advyteam Accretio & INRAE</b> (2025, Lyon) — Ingénieure logiciel, Product Owner & QA<br>• <b>ISEP Paris & ESPRIT</b> (2024) — Ingénieure ERP, intégration logicielle (WMS)<br>• <b>Sekceram</b> (2023, Algérie) — Ingénieure Cloud ERP, administration système & data`,en:`Her experience:<br>• <b>Boldys AI</b> (2026–) — AI Developer, AI product design<br>• <b>Advyteam Accretio & INRAE</b> (2025, Lyon) — Software Engineer, Product Owner & QA<br>• <b>ISEP Paris & ESPRIT</b> (2024) — ERP Engineer, software integration (WMS)<br>• <b>Sekceram</b> (2023, Algeria) — Cloud ERP Engineer, system administration & data`},
+ {k:['projet','projets','project','projects','baebles','banti','side','application','app','portfolio','built'],fr:`Ses projets :<br>• <b>Baebles</b> (<a href='https://baebles.com' target='_blank'>baebles.com</a>) — communauté pour les lecteurs de fantasy (iOS & Android)<br>• <b>Banti</b> (<a href='https://banti.app' target='_blank'>banti.app</a>) — matching entre fondateurs, experts et investisseurs<br>• Étude NLP / RAG de l'impact de l'IA sur l'emploi<br>• Classification d'œuvres d'art (CNN)<br>• Smart Healthcare Predictor (Angular, Flask, Power BI)`,en:`Her projects:<br>• <b>Baebles</b> (<a href='https://baebles.com' target='_blank'>baebles.com</a>) — a community app for fantasy readers (iOS & Android)<br>• <b>Banti</b> (<a href='https://banti.app' target='_blank'>banti.app</a>) — matching founders, experts and investors<br>• NLP / RAG study of AI's impact on the job market<br>• Artwork classification (CNN)<br>• Smart Healthcare Predictor (Angular, Flask, Power BI)`},
+ {k:['ia','ai','intelligence','langgraph','langchain','rag','llm','gpt','agent','agents','nlp','machine','deep','mcp','data','genai'],fr:`En IA, Rouba maîtrise LangGraph, LangChain, RAG, NLP, Machine & Deep Learning, Sentiment Analysis, GPT-4o / OpenAI API et MCP. Elle a mis en production un moteur multi-agents chez Boldys AI. Certifiée NVIDIA Deep Learning et Generative AI.`,en:`In AI, Rouba works with LangGraph, LangChain, RAG, NLP, Machine & Deep Learning, Sentiment Analysis, GPT-4o / OpenAI API and MCP. She shipped a multi-agent engine to production at Boldys AI, and holds NVIDIA Deep Learning and Generative AI certificates.`},
+ {k:['competence','competences','skill','skills','stack','techno','tech','langage','python','java','react','django','angular','flutter','framework','outil','tools'],fr:`Sa stack :<br>• <b>Langages</b> : Python, Java, JS/TS, PHP, C/C++, SQL<br>• <b>Backend</b> : Django/DRF, Spring Boot, Symfony, Node.js, Celery<br>• <b>Front & mobile</b> : React, Next.js, Angular, Flutter, FlutterFlow, Tailwind<br>• <b>BDD</b> : PostgreSQL, MySQL, MongoDB, Supabase<br>• <b>DevOps</b> : Docker, Coolify, Azure, AWS, CI/CD, Redis<br>• <b>BI / ERP</b> : Power BI, Dynamics 365, Oracle Cloud ERP, SAP, Odoo`,en:`Her stack:<br>• <b>Languages</b>: Python, Java, JS/TS, PHP, C/C++, SQL<br>• <b>Backend</b>: Django/DRF, Spring Boot, Symfony, Node.js, Celery<br>• <b>Front & mobile</b>: React, Next.js, Angular, Flutter, FlutterFlow, Tailwind<br>• <b>Databases</b>: PostgreSQL, MySQL, MongoDB, Supabase<br>• <b>DevOps</b>: Docker, Coolify, Azure, AWS, CI/CD, Redis<br>• <b>BI / ERP</b>: Power BI, Dynamics 365, Oracle Cloud ERP, SAP, Odoo`},
+ {k:['formation','etude','etudes','diplome','ecole','esprit','universite','education','bac','monastir','degree','university','school','study'],fr:`Formation :<br>• <b>ESPRIT</b> (2023–2026) — Diplôme d'Ingénieur, IA & Business Intelligence<br>• <b>FSM Monastir</b> (2020–2023) — Prépa Maths-Physique<br>• Bac Sciences expérimentales — Lycée Route de la Plage, Soliman (2020)`,en:`Education:<br>• <b>ESPRIT</b> (2023–2026) — Engineering degree, AI & Business Intelligence<br>• <b>FSM Monastir</b> (2020–2023) — Preparatory programme, Maths-Physics<br>• Baccalaureate in Experimental Sciences — Lycée Route de la Plage, Soliman (2020)`},
+ {k:['certif','certification','certifications','nvidia','aws','certificate'],fr:`Certifications : NVIDIA Deep Learning, NVIDIA Generative AI Explained, Microsoft Dynamics 365 Fundamentals, AWS Cloud Foundations, Hashgraph Developer, Mastering Maven.`,en:`Certifications: NVIDIA Deep Learning, NVIDIA Generative AI Explained, Microsoft Dynamics 365 Fundamentals, AWS Cloud Foundations, Hashgraph Developer, Mastering Maven.`},
+ {k:['langue','langues','anglais','francais','arabe','allemand','english','french','arabic','german','speak','languages'],fr:`Arabe (langue maternelle), Français et Anglais courants, Allemand A2.`,en:`Arabic (native), fluent French and English, German A2.`},
+ {k:['ieee','associatif','association','associative','vie','engagement','leadership','benevol','volunteer','volunteering','club','hult','enactus','wie','advisor','mentor','women'],fr:`Vie associative & leadership :<br>• Advisor (actuellement) — IEEE Women in Engineering Affinity Group, ESPRIT<br>• Mentor (auparavant) — IEEE ESPRIT Student Branch<br>• Vice-Présidente — IEEE ESPRIT Student Branch<br>• Secrétaire Générale — IEEE Computer Society (chapitre ESPRIT)<br>• Vice-Présidente — WIE ACT 3 Congress<br>• Responsable RH — IEEE ESPRIT, TAPSES, clubs CTS<br>• Coordinatrice logistique — Hult Prize ESPRIT<br>• Participante — IEEE Region 8 SYP Congress, Grenoble<br>• Membre active — Enactus ENIM, Spark Club BIAT, British Council Debate Club`,en:`Volunteering & leadership:<br>• Advisor (current) — IEEE Women in Engineering Affinity Group, ESPRIT<br>• Mentor (past) — IEEE ESPRIT Student Branch<br>• Vice-President — IEEE ESPRIT Student Branch<br>• General Secretary — IEEE Computer Society (ESPRIT chapter)<br>• Vice-President — WIE ACT 3 Congress<br>• HR Lead — IEEE ESPRIT, TAPSES, CTS clubs<br>• Logistics Coordinator — Hult Prize ESPRIT<br>• Participant — IEEE Region 8 SYP Congress, Grenoble<br>• Active member — Enactus ENIM, Spark Club BIAT, British Council Debate Club`},
+ {k:['passion','passions','loisir','loisirs','hobby','hobbies','violon','violin','musique','music','natation','nager','swim','swimming','jogging','courir','running','run','lecture','lire','livre','livres','reading','read','books','anime','manga','serie','series','libre','free','fun','sport'],fr:`En dehors du code, Rouba joue du <b>violon</b>, nage, fait du <b>jogging</b>, lit beaucoup, et adore les <b>anime</b> et les <b>séries</b>.`,en:`Outside of work, Rouba plays the <b>violin</b>, swims, goes <b>jogging</b>, reads a lot, and loves <b>anime</b> and <b>TV series</b>.`},
+ {k:['agile','scrum','methode','kanban','product','owner','methodology'],fr:`Méthodes : Scrum, Kanban, Scrumban, CRISP-DM, Design Science Research. Elle a aussi été Product Owner (backlog, user stories, priorisation).`,en:`Methods: Scrum, Kanban, Scrumban, CRISP-DM, Design Science Research. She has also worked as a Product Owner (backlog, user stories, prioritisation).`},
+ {k:['dispo','disponible','disponibilite','recrut','embauche','cherche','hire','hiring','cdi','offre','opportunit','available','availability','looking','role'],fr:`Rouba cherche un poste à temps plein d'<b>ingénieure IA / Data</b> et est <b>disponible immédiatement</b>. Tu peux la contacter par <a href='mailto:roubasouidi.pro@gmail.com'>email</a> ou sur <a href='https://linkedin.com/in/rouba-souidi' target='_blank'>LinkedIn</a>.`,en:`Rouba is looking for a full-time <b>AI / Data engineering</b> role and is <b>available immediately</b>. You can reach her by <a href='mailto:roubasouidi.pro@gmail.com'>email</a> or on <a href='https://linkedin.com/in/rouba-souidi' target='_blank'>LinkedIn</a>.`},
+ {k:['contact','contacter','mail','email','linkedin','joindre','ecrire','reach'],fr:`Email : <a href='mailto:roubasouidi.pro@gmail.com'>roubasouidi.pro@gmail.com</a><br>LinkedIn : <a href='https://linkedin.com/in/rouba-souidi' target='_blank'>linkedin.com/in/rouba-souidi</a><br>GitHub : <a href='https://github.com/Rouba21' target='_blank'>github.com/Rouba21</a>`,en:`Email: <a href='mailto:roubasouidi.pro@gmail.com'>roubasouidi.pro@gmail.com</a><br>LinkedIn: <a href='https://linkedin.com/in/rouba-souidi' target='_blank'>linkedin.com/in/rouba-souidi</a><br>GitHub: <a href='https://github.com/Rouba21' target='_blank'>github.com/Rouba21</a>`},
+ {k:['localisation','ville','tunis','tunisie','pays','habite','remote','teletravail','where','based','location','live'],fr:`Rouba est basée à Tunis et a déjà travaillé à distance avec la Belgique et la France, ainsi qu'en présentiel à Lyon. Elle est à l'aise en équipe internationale.`,en:`Rouba is based in Tunis. She has worked remotely with teams in Belgium and France, and on-site in Lyon, and is comfortable in international teams.`},
+ {k:['client','clients','relation','soft','besoin','communication','customer'],fr:`Rouba échange directement avec les clients : recueil et reformulation des besoins, présentation des fonctionnalités livrées, suivi et support après livraison, avec des clients en production.`,en:`Rouba works directly with clients: gathering and clarifying needs, demoing delivered features, and providing follow-up and support for clients in production.`},
+ {k:['test','tests','qualite','quality','qa','couverture','coverage'],fr:`Rouba a écrit 32 tests automatisés (Django, Vitest) couvrant 100 % des règles métier critiques chez Boldys AI, et a été QA fonctionnelle chez Advyteam Accretio & INRAE.`,en:`Rouba wrote 32 automated tests (Django, Vitest) covering 100% of critical business rules at Boldys AI, and did functional QA at Advyteam Accretio & INRAE.`},
+ {k:['citation','quote','motivation','devise','motto','inspiration'],fr:`Une citation qui lui parle : « La meilleure façon de prédire l'avenir, c'est de l'inventer. » — Alan Kay`,en:`A quote she likes: “The best way to predict the future is to invent it.” — Alan Kay`},
+ {k:['merci','thanks','thank','super','cool','genial','top','great','nice'],fr:`Avec plaisir ! Autre chose que tu veux savoir sur Rouba ?`,en:`My pleasure! Anything else you'd like to know about Rouba?`}
 ];
 const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]/g,' ');
-function answer(q){
- const w=norm(q).split(/\s+/).filter(Boolean);let best=null,score=0;
- for(const e of KB){let s=0;for(const k of e.k){for(const x of w){if(x===k)s+=3;else if(x.length>2&&(x.startsWith(k)||k.startsWith(x)))s+=2}}if(s>score){score=s;best=e}}
- return best?best.a:"Hmm, je n'ai pas cette info Essaie : expérience, projets, compétences, IA, formation, langues, disponibilité ou contact.";
-}
+const EN_W=['what','who','where','which','how','your','you','are','is','does','do','tell','about','her','she','the','and','skills','hobbies','projects','education','work','available','can','have','experience','availability','leadership'];
+const FR_W=['quoi','qui','ou','quel','quelle','quels','comment','tu','tes','ton','ta','es','est','elle','ses','sa','les','des','et','parle','moi','peux','passions','projets','formation','competences','disponibilite','associative'];
+function detect(q){const w=norm(q).split(/\s+/);let e=0,f=0;w.forEach(x=>{if(EN_W.includes(x))e++;if(FR_W.includes(x))f++});return e>f?'en':f>e?'fr':LANG}
+function answer(q){const L=detect(q);const w=norm(q).split(/\s+/).filter(Boolean);let best=null,score=0;
+ for(const e of KB){let s=0;for(const k of e.k){for(const x of w){if(x===k)s+=3;else if(x.length>3&&k.length>3&&(x.startsWith(k)||k.startsWith(x)))s+=2}}if(s>score){score=s;best=e}}
+ return best?best[L]:T[L].nf}
 
-/* ---------- UI du chat ---------- */
-const chat=document.getElementById('chat'),msgs=document.getElementById('msgs'),input=document.getElementById('input'),quick=document.getElementById('quick');
-const QUICK=['Qui es-tu ?','Expérience','Projets','Compétences IA','Formation','Vie associative','Disponibilité','Contact'];
+const chat=document.getElementById('chat'),msgs=document.getElementById('msgs'),input=document.getElementById('input'),quick=document.getElementById('quick'),tip=document.getElementById('fabTip');
 let started=false;
 function add(html,who){const d=document.createElement('div');d.className='msg '+who;d.innerHTML=html;msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight}
 function botSay(html){const t=document.createElement('div');t.className='msg bot typing';t.innerHTML='<i></i><i></i><i></i>';msgs.appendChild(t);msgs.scrollTop=msgs.scrollHeight;
- setTimeout(()=>{t.remove();add(html,'bot')},600+Math.min(html.length*6,1000))}
+ setTimeout(()=>{t.remove();add(html,'bot')},600+Math.min(html.length*4,1000))}
 function ask(q){add(q.replace(/</g,'&lt;'),'me');botSay(answer(q))}
-QUICK.forEach(q=>{const b=document.createElement('button');b.type='button';b.textContent=q;b.onclick=()=>ask(q);quick.appendChild(b)});
-function openChat(){chat.classList.add('open');input.focus();if(!started){started=true;botSay("Coucou ! Je suis <b>Rouba</b>, l'assistante virtuelle de Rouba Souidi. Pose-moi une question sur son profil !")}}
+function renderQuick(){quick.innerHTML='';T[LANG].quick.forEach(q=>{const b=document.createElement('button');b.type='button';b.textContent=q;b.onclick=()=>ask(q);quick.appendChild(b)});input.placeholder=T[LANG].ph}
+function openChat(){chat.classList.add('open');tip.classList.add('hide');input.focus();if(!started){started=true;botSay(T[LANG].hi)}}
 document.getElementById('fab').onclick=()=>chat.classList.contains('open')?chat.classList.remove('open'):openChat();
 document.getElementById('openChat2').onclick=openChat;
+frame.onclick=openChat;
 document.getElementById('close').onclick=()=>chat.classList.remove('open');
 document.getElementById('form').onsubmit=e=>{e.preventDefault();const q=input.value.trim();if(q){ask(q);input.value=''}};
+setTimeout(()=>tip.classList.add('hide'),12000);
 
-/* ouverture auto du chat depuis le profil GitHub : ?chat=1 ou ?q=question */
-(()=>{const u=new URLSearchParams(location.search);const q=u.get('q');if(q||u.has('chat')){setTimeout(()=>{openChat();if(q)setTimeout(()=>ask(q),1400)},700)}})();
+function setLang(l){LANG=l;document.documentElement.lang=l;store.set('lang',l);
+ document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));
+ document.title=l==='en'?'Rouba Souidi — AI & Business Intelligence Engineer':'Rouba Souidi — Ingénieure IA & Business Intelligence';
+ li=0;speak(T[l].lines[0]);renderDots();renderQuick();showQuote(qi);tc=0;del=false}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+setLang(LANG);
+
+(()=>{const q=params.get('q');if(q||params.has('chat')){setTimeout(()=>{openChat();if(q)setTimeout(()=>ask(q),1400)},700)}})();
 </script>
 </body>
 </html>
